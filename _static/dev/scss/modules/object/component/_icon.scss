@@ -1,0 +1,44 @@
+@charset "utf-8";
+@use '../../foundation/vars' as v;
+@use '../../foundation/mixin' as m;
+
+
+/* icon
+-------------------------------------------*/
+.c-icon {
+    &__arrow {
+
+    }
+
+    &__contact {
+
+    }
+
+    &__tel {
+
+    }
+
+    &__line {
+        width: 60px;
+        height: 60px;
+    }
+
+    &__twitter {
+        width: 60px;
+        height: 60px;
+    }
+
+    &__instagram {
+        width: 60px;
+        height: 60px;
+    }
+
+    &__facebook {
+        width: 60px;
+        height: 60px;
+    }
+
+
+    @include m.mq-max(v.$breakpoint-xs) {
+    }
+}

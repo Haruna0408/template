@@ -1,0 +1,51 @@
+@charset "utf-8";
+@use '../../foundation/vars' as v;
+@use '../../foundation/mixin' as m;
+
+/* search
+------------------------------------------------*/
+.p-search {
+    &__box {
+        width: 100%;
+        max-width: 1300px;
+        margin: 6px auto 30px;
+    }
+
+    &__form {
+        width: 100%;
+        max-width: 100%;
+        position: relative;
+        border: 1px solid #bbb;
+    }
+
+    &__input {
+        width: 100%;
+        padding: 15px 20px;
+        background-color: #fff;
+        vertical-align: middle;
+        border: none;
+        font-size: 1.6rem;
+    }
+
+    &__button__submit {
+        border-radius: 0;
+        -webkit-box-sizing: content-box;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: none;
+        box-sizing: border-box;
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 8%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0);
+        background: url(../images/common/icon_search.svg) no-repeat center right 20px;
+        background-size: 30px 35px;
+    }
+
+    @include m.mq-max(v.$breakpoint-xs) {
+    }
+}

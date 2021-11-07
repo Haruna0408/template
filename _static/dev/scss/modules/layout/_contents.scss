@@ -1,0 +1,28 @@
+@charset "utf-8";
+@use '../foundation/vars' as v;
+@use '../foundation/mixin' as m;
+
+// /* content
+// ----------------------------------------------------------------- */
+.l-inner {
+    @include m.l-inner;
+
+    &__min {
+        @include m.l-inner__min;
+    }
+}
+
+.l-wrapper {
+    position: relative;
+}
+
+.l-section {
+    position: relative;
+}
+
+.l-mainvisual {
+    margin-top: -136px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}

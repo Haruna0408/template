@@ -1,0 +1,81 @@
+@charset "utf-8";
+@use '../../foundation/vars' as v;
+@use '../../foundation/mixin' as m;
+
+/* margin, padding
+----------------------------------------------------------------- */
+$spaces:(
+  xl: 100px,
+  xlsp: 60px,
+  lg: 60px,
+  lgsp: 30px,
+  md: 30px,
+  mdsp: 20px,
+  sm: 20px,
+  smsp: 10px,
+  xs: 10px,
+  xssp: 5px
+);
+$direction:(
+  top: t,
+  right: r,
+  bottom: b,
+  left: l
+);
+@mixin space($property) {
+  &--0 {
+    #{$property}: 0!important;
+  }
+  @each $key, $class in $direction {
+    &--#{$class} {
+      &-0 {
+        #{$property}-#{$key}: 0!important;
+      }
+      &-xl {
+        #{$property}-#{$key}: map-get($spaces, 'xl')!important;
+        @include m.mq-max(v.$breakpoint-sm) {
+          #{$property}-#{$key}: map-get($spaces, 'xlsp')!important;
+        };
+      }
+      &-lg {
+        #{$property}-#{$key}: map-get($spaces, 'lg')!important;
+        @include m.mq-max(v.$breakpoint-sm) {
+          #{$property}-#{$key}: map-get($spaces, 'lgsp')!important;
+        };
+      }
+      &-md {
+        #{$property}-#{$key}: map-get($spaces, 'md')!important;
+        @include m.mq-max(v.$breakpoint-sm) {
+          #{$property}-#{$key}: map-get($spaces, 'mdsp')!important;
+        };
+      }
+      &-sm {
+        #{$property}-#{$key}: map-get($spaces, 'sm')!important;
+        @include m.mq-max(v.$breakpoint-sm) {
+          #{$property}-#{$key}: map-get($spaces, 'smsp')!important;
+        };
+      }
+      &-xs {
+        #{$property}-#{$key}: map-get($spaces, 'xs')!important;
+        @include m.mq-max(v.$breakpoint-sm) {
+          #{$property}-#{$key}: map-get($spaces, 'xssp')!important;
+        };
+      }
+    }
+  }
+}
+
+// margin
+.u-mg {
+  @include space(margin);
+  @each $key, $class in $direction {
+    &--#{$class}-auto {
+      margin-#{$key}: auto!important;
+    }
+  }
+}
+
+// padding
+.u-pd {
+  @include space(padding);
+}

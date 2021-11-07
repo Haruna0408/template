@@ -1,0 +1,40 @@
+@charset "utf-8";
+@use '../../foundation/vars' as v;
+@use '../../foundation/mixin' as m;
+
+
+/* button
+-------------------------------------------*/
+.button {
+    &__base {
+        width: 100%;
+        max-width: 100%;
+        display: inline-block;
+        padding: 14px;
+        text-align: center;
+        font-size: 1.4rem;
+        font-weight: 700;
+        letter-spacing: .01em;
+        font-family: 'Montserrat', sans-serif;
+        background: linear-gradient(90deg, rgba(243,95,0,1) 0%, rgba(243,152,0,1) 65%);
+        color: #fff;
+        // border: 1px solid 
+
+        &::after {
+            @include m.after;
+            background: url() no-repeat;
+            background-size: 100%;
+        }
+
+        &--radius {
+            @extend .button__base;
+            border-radius: 50%;
+        }
+
+        &--square {
+            @extend .button__base;
+        }
+    }
+
+
+}

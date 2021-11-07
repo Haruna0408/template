@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+/* align
+----------------------------------------------------------------- */
+.u-align {
+
+  &--center {
+    text-align: center;
+  }
+  &--right {
+    text-align: right;
+  }
+  &--left {
+    text-align-last: auto;
+  }
+
+  &--img {
+    &-right {
+    }
+    &-left {
+
+    }
+  }
+
+}

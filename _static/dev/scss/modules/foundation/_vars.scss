@@ -1,0 +1,85 @@
+@charset "utf-8";
+
+// ===================================================================
+// 基本値
+// ===================================================================
+
+// 画像パス
+// $img_path: '../img';
+
+// width
+$width-xs: 320px;
+$width-sm: 400px;
+$width-md: 780px;
+$width-lg: 1160px;
+$width-xl: 1920px;
+
+$widthHeaderPc: 120px;
+$widthSidebar: 250px;
+
+//mediaquery
+$breakpoint-xxs: 460px;
+$breakpoint-xs: 767px; // sp
+$breakpoint-smx: 768px; // tablet - ipad
+$breakpoint-mxs: 960px;
+$breakpoint-sm: 1024px; // tablet -ipad pro
+$breakpoint-md: ($breakpoint-sm + 1); // pc
+$breakpoint-lg: $width-lg;
+
+$viewport: 375px;
+
+// height
+$heightHeaderSp: 60px;
+
+//コンテンツ幅
+$inner-basePc: 1080px;
+$inner-baseSp: 1080px;
+
+// margin, padding
+$spaceBase: 20px;
+$spaceBaseSp: 10;
+$spaceBaseTab: 25px;
+$spaceBasePc: 80px;
+
+// フォントサイズ
+$fontsizeBaseSp: 14px;
+$fontsizeBasePc: 16px;
+$fontsizeXsSp:  10px;
+$fontsizeXsPc: 12px;
+
+//font
+$fontOpenSans: 'Open Sans', sans-serif;
+
+
+// line-height
+$lhBasePc: 1.5;
+$lhBaseSp: $lhBasePc;
+$lhTitle: 1.5;
+$InPost: 2;
+
+// カラー
+$colorBase: #333;
+$colorTheme: #fff;
+$colorGray: #9A9A9A;
+$colorAccent: #007AFF;
+$colorSub: #51493b;
+$colorLink: $colorBase;
+$colorBg: #fff;
+$colorBgSidenav: #E9ECEF;
+$colorBorder: #EDEDED;
+$colorBorderGray: #707070;
+$colorBorderGray02:#EAEAEA;
+$colorBorderGray03:#E0E0E0;
+$colorBorderGray04: #DEDEDE;
+$colorNote: #788c8c;
+$colorEm: #e00022;
+$colorDanger: #e00022;
+$colorvalidation: #DF4440;
+$colorBgGray: $colorGray;
+$colorBgGrayLight: #f9f9f9;
+$colorBgGrayDark: #f5f5f5;
+$colorpostLinkBlue: #0061AC;
+$colorbgform: #FAFAFA;
+
+// cubic-bezier
+$cbDefault: cubic-bezier(.45,.05,.3,.93);

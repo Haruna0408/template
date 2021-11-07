@@ -1,0 +1,75 @@
+@charset "UTF-8";
+/* ==========================================================================
+Foundation
+========================================================================== */
+@use './modules/foundation/reset'; //リセットCSS
+@use './modules/foundation/vars';//変数設定
+@use './modules/foundation/mixin'; // 定義モジュール
+@use './modules/foundation/base'; // ベース
+
+/* ==========================================================================
+Layout
+========================================================================== */
+@use './modules/layout/header';
+@use './modules/layout/footer';
+@use './modules/layout/contents';
+
+/* ==========================================================================
+Object
+========================================================================== */
+/* Compoenent
+----------------------------------------------------------------- */
+@use './modules/object/component/accordion';
+@use './modules/object/component/animation';
+@use './modules/object/component/button';
+@use './modules/object/component/form';
+@use './modules/object/component/heading';
+@use './modules/object/component/icon';
+@use './modules/object/component/tag';
+@use './modules/object/component/title';
+@use './modules/object/component/rss';
+@use './modules/object/component/sticky';
+
+/* Project
+----------------------------------------------------------------- */
+@use './modules/object/project/archive';
+@use './modules/object/project/article';
+@use './modules/object/project/breadcrumb';
+@use './modules/object/project/card';
+@use './modules/object/project/contact';
+@use './modules/object/project/copyright';
+@use './modules/object/project/editor';
+@use './modules/object/project/floating';
+@use './modules/object/project/hamburger';
+@use './modules/object/project/notfound';
+@use './modules/object/project/loading';
+@use './modules/object/project/logo';
+@use './modules/object/project/mainvisual';
+@use './modules/object/project/nav';
+@use './modules/object/project/pagetop';
+@use './modules/object/project/search';
+@use './modules/object/project/slider';
+@use './modules/object/project/sidebar';
+@use './modules/object/project/sns';
+
+
+/*
+Utility
+-----------------------------------------------------------------*/
+@use './modules/object/utility/align';
+@use './modules/object/utility/clearfix';
+@use './modules/object/utility/flex';
+@use './modules/object/utility/display';
+@use './modules/object/utility/space';
+@use './modules/object/utility/text';
+@use './modules/object/utility/link';
+@use './modules/object/utility/iframe';
+@use './modules/object/utility/bg';
+@use './modules/object/utility/image';
+@use './modules/object/utility/js';
+
+@use './modules/index';
+
+
+//dartsass
+//Quote：https://www.evoworx.co.jp/blog/dartsass-gulp/

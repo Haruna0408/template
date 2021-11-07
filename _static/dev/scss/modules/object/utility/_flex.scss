@@ -1,0 +1,259 @@
+@charset "utf-8";
+@use '../../foundation/vars' as v;
+@use '../../foundation/mixin' as m;
+
+/* flex
+----------------------------------------------------------------- */
+.u-flex {
+  display: flex;
+  &--pc {
+    @include m.mq-max(v.$breakpoint-sm) {
+      display: flex;
+    };
+  }
+  &--sp {
+    @include m.mq-max(v.$breakpoint-sm) {
+      display: flex;
+    };
+  }
+
+  &--column {
+    display: flex;
+    @include m.flexColumn;
+    &-pc {
+      @include m.mq-min(v.$breakpoint-md) {
+        display: flex;
+        @include m.flexColumn;
+      };
+    }
+    &-sp {
+      @include m.mq-max(v.$breakpoint-sm) {
+        display: flex;
+        @include m.flexColumn;
+      };
+    }
+  }
+
+  &--ai {
+    &-center {
+      align-items: center;
+      &-pc {
+        @include m.mq-min(v.$breakpoint-md) {
+          align-items: center;
+        };
+      }
+      &-sp {
+        @include m.mq-max(v.$breakpoint-sm) {
+          align-items: center;
+        };
+      }
+    }
+    &-end {
+      align-items: flex-end;
+      &-pc {
+        @include m.mq-min(v.$breakpoint-md) {
+          align-items: flex-end;
+        };
+      }
+      &-sp {
+        @include m.mq-max(v.$breakpoint-sm) {
+          align-items: flex-end;
+        };
+      }
+    }
+    &-start {
+      align-items: flex-start;
+      &-pc {
+        @include m.mq-min(v.$breakpoint-md) {
+          align-items: flex-start;
+        };
+      }
+      &-sp {
+        @include m.mq-max(v.$breakpoint-sm) {
+          align-items: flex-start;
+        };
+      }
+    }
+    &-base {
+      align-items: baseline;
+      &-pc {
+        @include m.mq-min(v.$breakpoint-md) {
+          align-items: baseline;
+        };
+      }
+      &-sp {
+        @include m.mq-max(v.$breakpoint-sm) {
+          align-items: baseline;
+        };
+      }
+    }
+    &-stretch {
+      align-items: stretch;
+      &-pc {
+        @include m.mq-min(v.$breakpoint-md) {
+          align-items: stretch;
+        };
+      }
+      &-sp {
+        @include m.mq-max(v.$breakpoint-sm) {
+          align-items: stretch;
+        };
+      }
+    }
+  }
+
+  &--as {
+    &-center {
+      align-self: center;
+      &-pc {
+        @include m.mq-min(v.$breakpoint-md) {
+          align-self: center;
+        };
+      }
+      &-sp {
+        @include m.mq-max(v.$breakpoint-sm) {
+          align-self: center;
+        };
+      }
+    }
+    &-end {
+      align-self: flex-end;
+      &-pc {
+        @include m.mq-min(v.$breakpoint-md) {
+          align-self: flex-end;
+        };
+      }
+      &-sp {
+        @include m.mq-max(v.$breakpoint-sm) {
+          align-self: flex-end;
+        };
+      }
+    }
+    &-start {
+      align-self: flex-start;
+      &-pc {
+        @include m.mq-min(v.$breakpoint-md) {
+          align-self: flex-start;
+        };
+      }
+      &-sp {
+        @include m.mq-max(v.$breakpoint-sm) {
+          align-self: flex-start;
+        };
+      }
+    }
+    &-base {
+      align-self: baseline;
+      &-pc {
+        @include m.mq-min(v.$breakpoint-md) {
+          align-self: baseline;
+        };
+      }
+      &-sp {
+        @include m.mq-max(v.$breakpoint-sm) {
+          align-self: baseline;
+        };
+      }
+    }
+    &-stretch {
+      align-self: stretch;
+      &-pc {
+        @include m.mq-min(v.$breakpoint-md) {
+          align-self: stretch;
+        };
+      }
+      &-sp {
+        @include m.mq-max(v.$breakpoint-sm) {
+          align-self: stretch;
+        };
+      }
+    }
+  }
+
+  &--jc {
+    &-center {
+      justify-content: center;
+      &-pc {
+        @include m.mq-min(v.$breakpoint-md) {
+          justify-content: center;
+        };
+      }
+      &-sp {
+        @include m.mq-max(v.$breakpoint-sm) {
+          justify-content: center;
+        };
+      }
+    }
+    &-end {
+      justify-content: flex-end;
+      &-pc {
+        @include m.mq-min(v.$breakpoint-md) {
+          justify-content: flex-end;
+        };
+      }
+      &-sp {
+        @include m.mq-max(v.$breakpoint-sm) {
+          justify-content: flex-end;
+        };
+      }
+    }
+    &-start {
+      justify-content: flex-start;
+      &-pc {
+        @include m.mq-min(v.$breakpoint-md) {
+          justify-content: flex-start;
+        };
+      }
+      &-sp {
+        @include m.mq-max(v.$breakpoint-sm) {
+          justify-content: flex-start;
+        };
+      }
+    }
+    &-around {
+      justify-content: space-around;
+      &-pc {
+        @include m.mq-min(v.$breakpoint-md) {
+          justify-content: space-around;
+        };
+      }
+      &-sp {
+        @include m.mq-max(v.$breakpoint-sm) {
+          justify-content: space-around;
+        };
+      }
+    }
+    &-between {
+      justify-content: space-between;
+      &-pc {
+        @include m.mq-min(v.$breakpoint-md) {
+          justify-content: space-between;
+        };
+      }
+      &-sp {
+        @include m.mq-max(v.$breakpoint-sm) {
+          justify-content: space-between;
+        };
+      }
+    }
+  }
+
+  &--order {
+    @for $i from 1 through 5 {
+      &-#{$i} {
+        order: #{$i};
+        &-pc {
+          @include m.mq-min(v.$breakpoint-md) {
+            order: #{$i};
+          };
+        }
+        &-sp {
+          @include m.mq-max(v.$breakpoint-sm) {
+            order: #{$i};
+          };
+        }
+      }
+    }
+  }
+
+}

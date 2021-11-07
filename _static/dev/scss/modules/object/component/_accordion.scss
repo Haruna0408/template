@@ -1,0 +1,63 @@
+@charset "utf-8";
+@use '../../foundation/vars' as v;
+@use '../../foundation/mixin' as m;
+
+/* accordion
+----------------------------------------------------------------- */
+.c-accordion {
+    &__box {
+
+    }
+
+    &__title {
+        position: relative;
+        cursor: pointer;
+        &::before {
+            @include m.before;
+            background: url()no-repeat;
+            background-size: 100%;
+            // width: ;
+            // height: ;
+        }
+        &::after {
+            @include m.after;
+            background: url()no-repeat;
+            background-size: 100%;
+            // width: ;
+            // height: ;
+        }
+
+        &.is-active {
+            &::after {
+                background: url()no-repeat;
+                background-size: 100%;
+                transform: rotate(-180deg);
+            }
+        }
+    }
+
+    &__body {
+        display: none;
+        transition: all .3s cubic-bezier(.215,.61,.355,1);
+
+        &::before {
+            @include m.before;
+            background: url()no-repeat;
+            background-size: 100%;
+            // width: ;
+            // height: ;
+        }
+
+        &.is-active {
+            display: block;
+            // transition: all .3s cubic-bezier(.215,.61,.355,1);
+            &::after {
+                transform: rotate(-180deg);
+            }
+        }
+    }
+
+    @include m.mq-max(v.$breakpoint-xs) {
+    }
+}
+

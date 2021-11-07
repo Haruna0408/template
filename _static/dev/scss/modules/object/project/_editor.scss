@@ -1,0 +1,149 @@
+
+@charset "utf-8";
+@use '../../foundation/vars' as v;
+@use '../../foundation/mixin' as m;
+
+/* editor style
+----------------------------------------------------------------- */
+//エディタ入力エリア
+.editor_input_wrap {
+
+    .editor_input_wrap_element {
+        margin-top: 40px;
+        margin-bottom: 56px;
+        font-size: 18px;
+    }
+
+
+  p {
+    font-size: 18px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    line-height: 2;
+  }
+  blockquote {
+    padding: 10px 20px;
+    box-sizing: border-box;
+    font-style: italic;
+    quotes: '"' '"' "'" "'";
+  }
+  blockquote::before {
+      content: open-quote;
+  }
+  blockquote::after {
+      content: close-quote;
+  }
+  ol {
+      margin: 1em 0;
+      // padding-left: 40px;
+      list-style-type: decimal;
+      list-style-position: inside;
+  }
+  ul {
+      margin: 1em 0;
+      // padding-left: 40px;
+      list-style-type: disc;
+      list-style-position: inside;
+  }
+  li {
+      margin: .5em 0;
+      padding-left: 1em;
+      text-indent: -1.5em;
+      &::marker {
+          margin-right: 5px;
+      }
+  }
+  a {
+    text-decoration: underline;
+    display: inline;
+  }
+  del {
+    text-decoration: line-through;
+  }
+  code {
+    font-family: monospace;
+  }
+  strong {
+    font-weight: bold;
+  }
+  em {
+      font-style: italic;
+      font-weight: bold;
+  }
+  ins {
+    text-decoration: underline;
+  }
+  div {
+    margin: 2em 0;
+  }
+  table {
+    tr {
+        /*display: block; */
+        margin-bottom: 1em;
+    }
+  }
+  iframe {
+    max-width: 100%;
+    margin: 1em 0;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  img.alignright { display: block; margin: 0 0 0 auto!important;}
+  img.alignleft { display: block; margin: 0 auto 0 0!important;}
+  img.aligncenter { display: block; margin: 0 auto!important;}
+  span {
+    display: inline-block;
+    margin: 1em 0;
+  }
+  video {
+    max-width: 100%;
+    margin: 1em 0;
+  }
+
+}
+
+@include m.mq-max(v.$breakpoint-xs) {
+    //free editor input area
+  .editor_input_wrap {
+      margin-top: 4.26667vw;
+      margin-bottom: 6.93333vw;
+      font-size: 3.73333vw;
+
+    .editor_input_wrap_element {
+        margin-top: 4.26667vw;
+        margin-bottom: 6.93333vw;
+        font-size: 3.73333vw;
+    }
+
+    p {
+      font-size: 3.73333vw;
+      margin-bottom: 1.5rem;
+    }
+    blockquote {
+      padding: get_vw(10) get_vw(20);
+      box-sizing: border-box;
+      font-style: italic;
+      quotes: '"' '"' "'" "'";
+    }
+    blockquote::before {
+        content: open-quote;
+    }
+    blockquote::after {
+        content: close-quote;
+    }
+    ol {
+        margin: 1em 0;
+    }
+    ul {
+      margin: 1em 0;
+    }
+    li {
+        margin: .5em 0;
+        &::marker {
+            margin-right: 5px;
+        }
+    }
+  }
+}

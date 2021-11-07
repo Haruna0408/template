@@ -1,0 +1,25 @@
+@charset "utf-8";
+@use '../../foundation/vars' as v;
+@use '../../foundation/mixin' as m;
+
+/* article
+----------------------------------------------------------------- */
+.p-article {
+    &__heading{
+
+    }
+
+    &__title {
+
+    }
+
+    &__lead {
+
+    }
+
+    @include m.mq-max(v.$breakpoint-md) {
+    }
+
+    @include m.mq-max(v.$breakpoint-xs) {
+    }
+}

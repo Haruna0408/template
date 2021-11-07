@@ -1,0 +1,53 @@
+@charset "utf-8";
+@use '../foundation/vars' as v;
+@use '../foundation/mixin' as m;
+
+/* header
+----------------------------------------------------------------- */
+.l-header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    transition: all .3s;
+    background-color: v.$colorTheme; //#fff
+
+  &__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+  }
+
+  &__top {
+    @include m.flex;
+    align-items: center;
+    padding: 10px 20px;
+  }
+
+  &__bottom {
+    padding: 0 30px;
+    max-width: v.$breakpoint-sm;
+    margin: auto;
+  }
+
+  @include m.mq-max(v.$breakpoint-xs) {
+
+    &__inner {
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 10px 2%;
+    }
+
+    &__top {
+      @include m.flexWrap;
+      padding: 0 2%;
+    }
+
+    &__bottom {
+        display: none;
+    }
+  }
+
+}

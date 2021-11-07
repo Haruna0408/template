@@ -1,0 +1,23 @@
+@charset "utf-8";
+@use '../../foundation/vars' as v;
+@use '../../foundation/mixin' as m;
+
+/* floating
+----------------------------------------------------------------- */
+.p-floating {
+    &__list {
+        position: fixed;
+        z-index: 99;
+    }
+
+    &__item {
+        width: 50%;
+    }
+
+    &__button {
+
+    }
+
+    @include m.mq-max(v.$breakpoint-xs) {
+    }
+}

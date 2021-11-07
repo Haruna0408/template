@@ -1,0 +1,81 @@
+@charset "utf-8";
+@use '../../foundation/vars' as v;
+@use '../../foundation/mixin' as m;
+
+/* js
+----------------------------------------------------------------- */
+.js {
+
+  &-image--switch {
+    opacity: 0;
+    transition: opacity .2s;
+    &.js-show {
+      opacity: 1;
+    }
+    .slick-slide & {
+      opacity: 1;
+    }
+  }
+
+  &-accordion {
+    &__btn {
+      outline: none;
+      appearance: none;
+      cursor: pointer;
+    }
+    &__content {
+      &.js-close {
+        display: none;
+      }
+    }
+    &--sp {
+      &__btn {
+        @include m.resetForm;
+        cursor: pointer;
+        @include m.mq-min(v.$breakpoint-md) {
+          display: none!important;
+        }
+      }
+      &__content {
+        @include m.mq-min(v.$breakpoint-md) {
+          display: block !important;
+        }
+        &.js-close {
+          @include m.mq-max(v.$breakpoint-sm) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  &-animation {
+    &--fadein {
+      @include m.scrollFedeIn;
+    }
+    &--slidetext {
+      @include m.slidetext;
+      &::before {
+        background-color: v.$colorBase;
+      }
+      > span {
+        transition: opacity 0s linear .8s;
+      }
+      &.js-show {
+        &::before {
+          animation: maskStart 1s cubic-bezier(.89, .12, .43, .93) .2s forwards;
+        }
+        > span {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &-rellax {
+    @media print {
+      transform: translate3d(0, 0, 0) !important;
+    }
+  }
+
+}

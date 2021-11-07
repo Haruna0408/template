@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!---------------------------------------- meta ---------------------------------------------------------------->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ページの内容を表す文章" />
+    <!-- 公開時削除↓↓ -->
+    <meta name="robots" content="noindex,nofollow" />
+    <!-- 公開時削除↑↑ -->
+    <!---------------------------------------- title ---------------------------------------------------------------->
+    <title>インデックス | テンプレート</title>
+    <!---------------------------------------- font ----------------------------------------------------------------->
+    <!-- /notosans -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+    <!-- /opensans -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+    <!------------------------------------------- css --------------------------------------------------------------->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!----------------------------------------- favicon ------------------------------------------------------------->
+    <link rel="icon" href="/assets/img/common/favicon.ico">
+    <link rel="apple-touch-icon" href="/assets/img/common/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="/assets/img/common/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/assets/img/common/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/assets/img/common/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/assets/img/common/android-chrome-256x256.png" sizes="256x256">
+    <link rel="icon" type="image/png" href="/assets/img/common/android-chrome-512x512.png" sizes="512x512">
+    <!-- /スマホ用アイコン画像 -->
+    <link rel="apple-touch-icon-precomposed" href="画像のURL" />
+    <!-- -------------------------------------------- OGP ------------------------------------------------------------->
+    <meta property="og:url" content="ページのURL" />
+    <meta property="og:title" content="ページのタイトル" />
+    <meta property="og:type" content="ページのタイプ">
+    <meta property="og:description" content="記事の抜粋" />
+    <meta property="og:image" content="画像のURL" />
+    <meta property="og:site_name" content="サイト名" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="fb:app_id" content="appIDを入力" />
+    <!------------------------------------------------- twitter card -------------------------------------------------->
+    <meta name="twitter:card" content="カード種類" />
+    <meta name="twitter:site" content="@Twitterユーザー名" />
+    <!------------------------------------------------- Google Analytics Tag ------------------------------------------->
+    <!-- <script></script> -->
+</head>
+
+<body>
+    <!---------------------------------------------/ Loading ------------------------------------------------------------>
+    <div id="loading">
+        <div class="p-loading__item"></div>
+        <!-- <p class="p-loading__img"><img src="./assets/img/img_about.png" alt="ローディング画像"></p> -->
+        <p class="p-loading__text">Loading...</p>
+    </div>
+
+    <div class="l-wrapper">
+        <!---------------------------------------------/ Header ---------------------------------------------------------->
+        <header id="header" class="l-header">
+            <div class="l-header__content l-header__inner">
+                <div class="l-header__top">
+                    <!-- <ul class="p-logo__list">
+                        <li class="p-logo__item p-logo__01"> -->
+                            <h1 class="p-logo">
+                                <a href="/" class="p-logo__link">
+                                    ロゴ
+                                    <!-- <img src="./assets/img/common/logo_01.svg" alt="ロゴ"> -->
+                                </a>
+                            </h1>
+                        <!-- </li>
+                    </ul> -->
+                </div>
+                <div class="p-nav__area drower">
+                    <nav class="p-nav__content">
+                        <ul class="p-nav__list">
+                            <li class="p-nav__item">
+                                <a href="./contact/" class="p-nav__link js-open__trigger">about</a>
+                            </li>
+                            <li class="p-nav__item">
+                                <a href="#" class="p-nav__link js-open__trigger">blog</a>
+                            </li>
+                        </ul>
+                        <!-- <div class="p-nav__button _sp js-close_trigger">
+                            <p class="c-button__green">
+                                <span class="c-button__radius c-button__close">メニューを閉じる</span>
+                            </p>
+                        </div> -->
+                    </nav>
+                </div>
+                <!-- .p-nav__area /-->
+                <button type="button" class="p-hamburger p-hamburger__button" aria-expanded="false">
+                    <span class="p-hamburger__line one"></span>
+                    <span class="p-hamburger__line two"></span>
+                    <span class="p-hamburger__line three"></span>
+                    <span class="p-hamburger__text"></span>
+                </button><!-- p-hambergermenu /-->
+            </div>
+            <!--.l-header__content /-->
+        </header><!--.l-header /-->
+        <!---------------------------------------------/ Header ----------------------------------------------------------->
+
+        <!---------------------------------------------/ Article ---------------------------------------------------------->
+        <article class="l-article">
+            <main class="l-main">
+
+                <div class="u-bg__parallax">
+                    <div class="u-bg__parallax__child">
+                        <video class="pc" autoplay loop muted playsinline src="./assets/movie/bg_mv_pc.mp4" type="video/mp4">
+                            <source srcset=" bg_mv_pc.mp4">
+                        </video>
+                        <video class="sp" autoplay loop muted playsinline src="./assets/movie/bg_mv_sp.mp4" type="video/mp4">
+                            <source srcset=" bg_mv_sp.mp4">
+                        </video>
+                    </div>
+                </div>
+                <!-------- bg parallax /-------->
+
+                <div class="l-section l-mainvisual">
+                    <!-- mv video -->
+                    <div class="p-mainvisual__area">
+                        <!-- mv -->
+                        <div class="p-mainvisual__wrap">
+                            <video src="./assets/movie/bg_mv.mp4" class="p-mainvisual__movie ie_object_images" playsinline="" autoplay=""
+                                muted="" loop=""></video>
+                            <div class="p-mainvisual__text">
+                                <picture>
+                                    <source media="(min-width: 701px)" srcset="./assets/images/pc/mv-tit@2x.png">
+                                    <source media="(max-width: 700px)" srcset="./assets/images/sp/mv-tit_sp@2x.png">
+                                    <img src="/assets/images/pc/mv-tit@2x.png" alt="説明が入ります">
+                                </picture>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="c-scrollDown">
+                        <span class="c-scrollDown__text">Scroll</span>
+                    </div><!-- scrollDown /-->
+                </div>
+                <!--.l-mainvisual /-->
+
+                <section class="l-section l-pickup">
+                    <div class="l-inner">
+                        <!-- コンテンツ -->
+                        <h2 class="c-heading">
+                            <span class="c-heading__main">ADVANTAGE</span>
+                            <span class="c-heading__sub">強み</span>
+                        </h2>
+
+                        <div class="p-card__list">
+                            <!-- Advantage01 -->
+                            <div class="p-card__item">
+                                <!-- <a href="#" class="p-card__link"> -->
+                                    <div class="p-card__img" style="background-image: url();">
+                                        <!--/img-->
+                                        <img src="./assets/img/top/icon-advantage01.svg" alt="ナイトワークアイコン">
+                                        <!-- /picture pc/ spで画像切り替え -->
+                                        <picture>
+                                            <source srcset="./assets/img/card-img.jpg" media="(min-width: 768px)" />
+                                            <img src="./assets/img/card-img-sp.jpg" alt="" />
+                                        </picture>
+                                    </div>
+                                    <div class="p-card__body">
+                                        <h3 class="c-title p-card__title">天文館ナイトワークに特化！</h3>
+                                        <p class="c-lead p-card__lead">
+                                            テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                                        </p>
+                                    </div>
+                                <!-- </a> -->
+                                <!-- 記事ページへリンク -->
+                                <a href="#" class="c-button__base p-card__button">MORE DETAIL</a>
+                            </div>
+
+                            <!-- Advantage02 -->
+                            <div class="p-card__item">
+                                <!-- <a href="#" class="p-card__link"> -->
+                                <div class="p-card__img" style="background-image: url();">
+                                    <!--/img-->
+                                    <img src="./assets/img/top/icon-advantage01.svg" alt="ナイトワークアイコン">
+                                    <!-- /picture pc/ spで画像切り替え -->
+                                    <picture>
+                                        <source srcset="./assets/img/card-img.jpg" media="(min-width: 768px)" />
+                                        <img src="./assets/img/card-img-sp.jpg" alt="" />
+                                    </picture>
+                                </div>
+                                <div class="p-card__body">
+                                    <h3 class="c-title p-card__title">天文館ナイトワークに特化！</h3>
+                                    <p class="c-lead p-card__lead">
+                                        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。キストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                                    </p>
+                                </div>
+                                <!-- </a> -->
+                                <!-- 記事ページへリンク -->
+                                <a href="#" class="c-button__base p-card__button">MORE DETAIL</a>
+                            </div>
+
+                            <!-- Advantage03 -->
+                            <div class="p-card__item">
+                                <!-- <a href="#" class="p-card__link"> -->
+                                <div class="p-card__img" style="background-image: url();">
+                                    <!--/img-->
+                                    <img src="./assets/img/top/icon-advantage01.svg" alt="ナイトワークアイコン">
+                                    <!-- /picture pc/ spで画像切り替え -->
+                                    <picture>
+                                        <source srcset="./assets/img/card-img.jpg" media="(min-width: 768px)" />
+                                        <img src="./assets/img/card-img-sp.jpg" alt="" />
+                                    </picture>
+                                </div>
+                                <div class="p-card__body">
+                                    <h3 class="c-title p-card__title">天文館ナイトワークに特化！</h3>
+                                    <p class="c-lead p-card__lead">
+                                        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                                    </p>
+                                </div>
+                                <!-- </a> -->
+                                <!-- 記事ページへリンク -->
+                                <a href="#" class="c-button__base p-card__button">MORE DETAIL</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </section>
+                <!--.l-pickup /-->
+
+                <section id="faq" class="l-section l-section__faq">
+                    <div class="l-inner">
+                        <h2 class="c-title">faq</h2>
+                        <div class="p-faq__wrap">
+                            <dl class="c-accordion__box">
+                                <dt class="c-accordion__title js-trigger p-faq__title">タイトル</dt>
+                                <dd class="c-accordion__body p-faq__item">
+                                    テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </section>
+                <!--.l-section__about /-->
+
+                <section id="news" class="l-section l-section__news">
+                    <div class="l-inner">
+                        <h2 class="c-title">BLOG</h2>
+                        <div class="c-rss__list p-news__list">
+                            <div class="c-rss__item p-news__item">
+                                <a href="#" class="c-rss__link p-news__link">
+                                    <dl class="c-rss__body p-news__body">
+                                        <dt class="c-rss__day p-news__day">日付が入ります<span class="c-tag p-category__item">お知らせ</span></dt>
+                                        <dd class="c-rss__lead p-news__lead">タイトルが入りますタイトルが入りますタイトルが入ります</dd>
+                                    </dl>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="c-button__base">
+                            <a href="#" class="c-button__base c-icon__arrow">一覧を見る</a>
+                            </p>
+                    </div>
+                </section>
+                <!--.l-section__blog /-->
+
+                <section id="about" class="l-section l-section__about">
+                    <div class="l-inner">
+                        <h2 class="c-title">ABOUT</h2>
+                        <div class="p-about__img">
+                            <img src="./assets/img/img_about.png" alt="まめアイコン">
+                        </div>
+                        <div class="p-about__text">
+                            <p class="c-paragraph">
+                                現在、制作会社にてマークアップを中心にサイト制作をしています。<br>
+                                2011年に医療短期大学を卒業後、2018年まで看護師として勤務し、<br>
+                                2019年に未経験からWeb業界へ転職しました。美容医療をメインとした<br>
+                                Webサイト・バナー制作・ライティング、SNS運用などの経験を経て、<br>
+                                現在はWebサイトの専門性を深めるため、静的〜システムコーディング、<br>
+                                簡易的なWordpressの組み込みを行っています。<br>
+                                モットーは、ユーザーにとってわかりやすく使いやすいを常に意識した制作と、<br>
+                                技術者にとって扱いやすいソース管理に努めています。<br>
+                                今後は、さらに使いやすく、効果の出るサービス・制作を提供できるよう研鑚。
+                            </p>
+                        </div>
+                        <p class="p-button"><a href="#" class="c-button__base--thin c-icon_external">レジュメを見る</a></p>
+                    </div>
+                </section>
+                <!--.l-section__about /-->
+
+                <section id="contact" class="l-section l-section__contact　c-bgcolor__gray">
+                    <div class="l-inner">
+                        <h2 class="c-title">CONTACT</h2>
+                        <p class="c-bg__radius c-bgcolor__white"><img src="./assets/img/icon_contact.svg"
+                                alt="お問い合わせアイコン">
+                        </p>
+                    </div>
+                </section>
+                <!--.l-section__contact /-->
+
+                <ul class="p-sns__list">
+                    <li class="p-sns__item c-icon__twitter">
+                        <a href="http://twitter.com/share?text=&amp;url=http://" rel="nofollow" target="_blank">
+                            <img src="./assets/images/common/icon_twitter.png" alt="Tweeter">
+                        </a>
+                    </li>
+                    <li class="p-sns__item c-icon__facebook">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=http://" rel="nofollow" target="_blank">
+                            <img src="./assets/images/common/icon_facebook.png" alt="FaceBook">
+                        </a>
+                    </li>
+                    <li class="p-sns__item c-icon__line"><a href="https://social-plugins.line.me/lineit/share?url=http:// target="_blank">
+                        <img src="./assets/images/common/icon_line.png" alt="Line">
+                    </a>
+                    </li>
+                </ul>
+
+            </main>
+            <!--.l-main /-->
+        </article><!--.l-article /-->
+
+        <!--------------------------------------------- Article /----------------------------------------------------------->
+
+        <!---------------------------------------------/ Footer ------------------------------------------------------------>
+        <footer class="l-footer">
+            <div class="l-footer__top">
+
+            </div>
+            <div class="p-copyright">
+                <p class="p-copyright__text">&copy;&nbsp;2021 Haruna Ishikawa</p>
+            </div>
+            <!--.l-copright /-->
+
+            <ul class="p-floating__list">
+                <li class="p-floating__item">
+                    <a href="#" class="c-button__base c-icon__contact p-floating__button"></a>
+                </li>
+            </ul><!-- .p-floating /-->
+            <div class="p-pagetop">
+                <a href="#" class="p-pagetop__link">
+                    <img src="/assets/img/common/icon_pagetop.png" alt="ページトップへ戻る">
+                </a>
+            </div><!-- .p-pagetop /-->
+        </footer><!--.l-footer /-->
+        <!--------------------------------------------- Footer /------------------------------------------------------------->
+
+    </div>
+    <!--.l-wrapper /-->
+    <!------------------------------------------------------ JavaScript ----------------------------------------------------------->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script><!-- /全体-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.3/picturefill.js"></script>
+    <!-- <script></script> -->
+    <script src="./assets/js/common.js"></script><!-- /全体-->
+    <script src="./assets/js/animation.js"></script><!-- /アニメーション用-->
+
+</body>
+</html>

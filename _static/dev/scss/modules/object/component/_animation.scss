@@ -1,0 +1,365 @@
+@charset "utf-8";
+@use '../../foundation/vars' as v;
+@use '../../foundation/mixin' as m;
+
+/* animation
+//------------------------------*/
+
+//参考
+//https://www.otwo.jp/blog/css_animation/
+//https://www.merges.co.jp/demo/scrollreveal.php
+
+//★★★ １つずつ書いた場合 ★★★
+//.animation {
+//    animation-name: name;                        //キーフレームの名前
+//    animation-duration: 1s;                      //かかる時間
+//    animation-delay: 0.5s;                       //速度
+//    animation-timing-function: ease-in-out;      //何秒後に開始するか
+//    animation-iteration-count: infinite;         //回数・ループ指定
+//    animation-direction:alternate;               //再生する方向
+//    animation-fill-mode: both;                   //アニメーション前後のプロパティの状態
+//    animation-play-state: runing;                // 一時停止・再生の指定
+//    @keyframes name {                            // アニメーションの変化の指定
+//        0% {}
+//        100%{}
+//    }
+//★★★ まとめて書いた場合 ★★★
+//.animation {
+//    animation: name 1s 0.5s ease-in-out infinite alternate;
+//}
+//★★★ 複数をまとめて書いた場合 ★★★
+//.animation {
+//    animation: name 1s 0.5s ease-in-out infinite alternate , name2 1s 1.5s ease-in-out infinite;
+//}
+
+//アニメーションの設定
+//★★★ 通常 ★★★
+//@keyframes name{
+//    0%{
+//    }
+//    100%{
+//    }
+//}
+//
+//★★★ 最後だけ指定しても動く ★★★
+//@keyframes name{
+//   100%{
+//    }
+//}
+//★★★ 最初と最後だけ指定 ★★★
+//@keyframes name{
+//    from{
+//    }
+//    to{
+//    }
+//}
+//★★★ 細かく指定 ★★★
+//@keyframes name{
+//    0%{
+//    }
+//    25%{
+//    }
+//    50%{
+//    }
+//    75%{
+//    }
+//    100%{
+//    }
+//}
+
+.js-animation {
+    opacity: 0;
+
+    &.js-scrollIn {
+        opacity: 0;
+
+        &.js-{
+
+            &fadeUp {
+                opacity: 0;
+                animation: fadeUp 1s .3s ease-in-out forwards;
+            }
+
+            &fadeLeftSide {
+                //opacity: 0;
+                animation: fadeLeftSide 1s .3s ease-in-out forwards;
+            }
+
+            &fadeRightSide {
+                //opacity: 0;
+                animation: fadeRightSide 1s .3s ease-in-out forwards;
+            }
+
+        }
+    }
+}
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(15%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeLeftSide {
+    0% {
+        opacity: 0;
+        transform: translateX(-20%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeRightSide {
+    0% {
+        opacity: 0;
+        transform: translateX(30%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+.js-scrollIn {
+
+    .js-animation__ {
+
+        &text {
+            opacity: 0;
+            // transition: all .3s ease;
+
+            &.topToBottom {
+                animation: text_fadeTop 1s ease-in-out 1.5s 1 forwards;
+            }
+
+            &.bottomToTop {
+                animation: text_fadeBottom 1s ease-in-out 1.5s 1 forwards;
+            }
+
+            &.leftToRight{
+                animation: text_fadeLeftSide 1s ease-in-out 1.5s 1 forwards;
+            }
+
+            &.rightToLeft {
+                animation: text_fadeRightSide 1s ease-in-out 1.5s 1 forwards;
+            }
+
+        }
+
+    }
+}
+
+
+@keyframes text_fadeTop {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(100%);
+    }
+}
+
+@keyframes text_fadeBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes text_fadeLeftSide {
+    0% {
+        opacity: 0;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(50%);
+    }
+}
+
+@keyframes text_fadeRightSide {
+    0% {
+        opacity: 0;
+        transform: translateX(50%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+// @keyframes text_leftToRight {
+//     0% {
+//         opacity: 0;
+//         transform: translateX(30%);
+//     }
+//     100% {
+//         opacity: 1;
+//         transform: translateX(0);
+//     }
+// }
+
+// @keyframes text_ReighToLeft {
+//     0% {
+//         opacity: 0;
+//         transform: translateX(30%);
+//     }
+//     100% {
+//         opacity: 1;
+//         transform: translateX(0);
+//     }
+// }
+
+
+/* scroll down
+-----------------------*/
+.c-scrollDown {
+    position: absolute;
+    left: calc(50% - 540px);
+    bottom: 240px;
+    height: 50px;
+
+    &::after {
+        @include m.after;
+        top: 0;
+        left: 5px; //ラインの位置調整
+        right: auto;
+        width: 1px;
+        height: 100%;
+        background-color: v.$colorBase; //#333
+        animation: scrollDown 1.6s ease-in-out infinite;
+        opacity: 0;
+    }
+
+    &__text {
+        position: absolute;
+        top: -35px; //テキスト位置調整
+        display: block;
+        font-size: 1.2rem;
+        color: v.$colorBase;
+        letter-spacing: .05em;
+        line-height: 1.3;
+         -ms-writing-mode: tb-rl;
+        writing-mode: vertical-rl;
+    }
+}
+
+/*高さ・位置・透過が変化して線が上から下に動く*/
+@keyframes scrollDown{
+	0%{
+		height: 0;
+		top: 0;
+		opacity: 0;
+	}
+	30%{
+		height: 50%;
+		opacity: 1;
+	}
+	100%{
+		height: 0;
+		top: 100%;
+		opacity: 0;
+	}
+}
+
+//参考：
+//https://coco-factory.jp/ugokuweb/move01/9-1-1/
+
+
+/* clip path
+---------------------------------------*/
+//参考
+//https://digipress.info/tech/revealing-text-by-clip-path/
+
+//inset
+//clip-path:inset(上 右 下 左);     //px、em、ex、%の単位から指定
+//clip-path: inset(0 100% 100% 0);
+
+//circle
+//circle(大きさ at クリップの基点)     //円形の切り抜き。基点は要素の中心(50% 50% = center)
+//clip-path: circle(0 at 50% 50%);
+
+//polygon
+//初期状態(左上)から、右と下に向けて元の要素の2倍の大きさまで拡大する三角形で切り抜きながら表示
+//clip-path: polygon(0 0, 200% 0, 0 200%);
+//*ビューポートの幅に対して角度を決める場合は、calc()が便利
+
+//ellips
+//clip-path: ellipse(25% 50% at 25% 50%);
+
+// .js-scrollIn {
+
+//     .js-animation__ {
+
+//         &clipPath_text {
+//             opacity: 1;
+//             // transition: all .3s ease;
+
+//             &.leftToRight{
+//                 // clip-path: inset(0 100% 0 0);
+//                 animation: clipPath_text_LeftToRight 1.5s ease-in-out 2.5s 1 forwards;
+//             }
+
+//             &.rightToLeft {
+//                 // clip-path: inset(0 0 0 100%);
+//                 animation: clipPath_text_ReighToLeft 1.5s ease-in-out 2.5s 1 forwards;
+//             }
+
+//         }
+
+//     }
+
+//     //clippath-insetをフェードアウト処理
+//     // .js-animation__trigger {
+//     //     &.js-animation__trigger__fadeOut {
+//     //         clip-path: inset(0);
+//     //     }
+//     // }
+
+// }
+
+// @keyframes clipPath_text_LeftToRight {
+//   0% {
+//     clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 0% 0%);
+//   }
+
+//   50% {
+//     clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 0% 0%);
+//   }
+
+//   100% {
+//     clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
+//   }
+// }
+
+// @keyframes clipPath_text_RightToLeft {
+//   0% {
+//     clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 0% 0%);
+//   }
+
+//   50% {
+//     clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 0% 0%);
+//   }
+
+//   100% {
+//     clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
+//   }
+// }
+
+
+
+

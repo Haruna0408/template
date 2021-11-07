@@ -1,0 +1,29 @@
+@charset "utf-8";
+@use '../../foundation/vars' as v;
+@use '../../foundation/mixin' as m;
+
+/* heading
+-------------------------------------*/
+h1 {
+  color: blue;
+  span {
+    display: flex;
+    align-items: center;
+    position: relative;
+    &::before,&::after {
+      content: '';
+      display: block;
+      background-color: green;
+    }
+    &::before {
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+h2 {
+  font-size: 48px;
+}

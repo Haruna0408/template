@@ -1,0 +1,59 @@
+@charset "utf-8";
+@use '../../foundation/vars' as v;
+@use '../../foundation/mixin' as m;
+
+/* rss
+----------------------------------------------------------------- */
+.c-rss {
+    &__list {
+        width: 100%;
+    }
+
+    &__item {
+        display: block;
+        width: 100%;
+        position: relative;
+    }
+
+    &__link {
+        display: block;
+        width: 100%;
+        position: relative;
+
+        &::after {
+            @include m.after;
+            background: url()no-repeat;
+            background-size: 100%;
+            // width: ;
+            // height: ;
+        }
+    }
+
+    &__body {
+        @include m.flexWrap;
+    }
+
+    &__title {
+        font-size: 2rem;
+        letter-spacing: .05em;
+        line-height: 1.6;
+        font-weight: 500;
+    }
+
+    &__time {
+        font-size: 1.3rem;
+        letter-spacing: .03em;
+        line-height: 1.2;
+    }
+
+    &__lead {
+        font-size: 1.6rem;
+        letter-spacing: .01em;
+        line-height: 2;
+        font-weight: 400;
+        @include m.textClamp;
+    }
+
+    @include m.mq-max(v.$breakpoint-xs) {
+    }
+}

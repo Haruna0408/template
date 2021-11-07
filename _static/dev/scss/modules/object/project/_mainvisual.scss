@@ -1,0 +1,209 @@
+@charset "utf-8";
+@use '../../foundation/vars' as v;
+@use '../../foundation/mixin' as m;
+
+/* maivisual
+------------------------------------------------*/
+/*video
+----------------------------*/
+.p-mainvisual {
+    &__area {
+        width: 100%;
+    }
+    &__wrap {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+    }
+    &__movie {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        text-align: center;
+        object-fit: cover;
+    }
+    &__text {
+        width: 100%;
+        max-width: 57%;
+        position: absolute;
+        top: calc(50% + 14vh);
+        left: calc(50% + 3vw);
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        text-align: center;
+    }
+
+
+    @include m.mq-max(v.$breakpoint-md) {
+        &__text {
+            padding: 7.5% 8%;
+            max-width: 80%;
+        }
+    }
+
+    @include m.mq-max(v.$breakpoint-xs) {
+        &__area {
+            width: 100%;
+        }
+        &__wrap {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+        &__movie {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100%;
+            z-index: -1;
+            text-align: center;
+            -o-object-fit: cover;
+            object-fit: cover;
+        }
+        &__text {
+            width: 100%;
+            max-width: 100%;
+            position: absolute;
+            top: calc(50% + 14vh);
+            left: calc(50% + 3vw);
+            -webkit-transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%);
+            padding: 7.5% 8%;
+        }
+    }
+
+    @include m.mq-max(v.$breakpoint-xxs) {
+        .mainvisual__text {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 7.5% 8%;
+        }
+    }
+
+    //IE
+    @media all and (-ms-high-contrast: none) {
+        &__wrap {
+            width: 100%;
+            min-width: 100vw;
+            min-height: 62vw;
+            height: 100%;
+        }
+        &__movie {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            min-width: 100vw;
+            min-height: 100%;
+        }
+    }
+}
+
+
+/* page mainvisual
+-----------------------------*/
+.p-mainvisual__page {
+    margin-top: 136px;
+    padding-bottom: 30px;
+
+    &__wrap {
+        width: 100%;
+        height: 300px;
+        position: relative;
+    }
+
+    &__image {
+        width: 65%;
+        height: 100%;
+        max-width: 1200px;
+        margin-left: auto;
+        // background: url()no-repeat;
+        // background-size: cover;
+
+        img {
+            display: block;
+            position: relative;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            &::before {
+                position: absolute;
+                display: block;
+                padding-top: calc( 3 / 4 * 100%);
+                top: 0;
+                right: 0;
+                bottom: 0;
+            }
+        }
+    }
+
+    &__title {
+        &__wrap {
+            position: absolute;
+            top: 50%;
+            left: calc(50% - 240px);
+            transform: translate(-50%, -50%);
+            width: 35%;
+            max-width: 1100px;
+        }
+        &__main {
+            font-size: 4rem;
+        }
+    }
+
+    @include m.mq-max(v.$breakpoint-md) {
+        padding-bottom: 30px;
+        &__wrap {
+            padding: 0 0 0 2%;
+            height: 300px;
+        }
+
+
+        &__title {
+            &__wrap {
+                position: absolute;
+                top: 50%;
+                left: calc(50% - 30vw);
+                max-width: 96%;
+                padding: 0 2%;
+            }
+            &__main {
+                font-size: 4rem;
+            }
+        }
+    }
+
+    @include m.mq-max(v.$breakpoint-xs) {
+        margin-top: 90px;
+        padding-bottom: 60px;
+        &__wrap {
+            padding: 0 0 0 2%;
+            height: auto;
+        }
+
+        &__image {
+            width: 70%;
+            max-width: 100%;
+        }
+
+        &__title {
+            &__wrap {
+                left: calc(50% - 30vw);
+                width: 30%;
+                max-width: 96%;
+                padding: 0 2%;
+            }
+            &__main {
+                font-size: 2.4rem;
+            }
+        }
+    }
+
+
+}

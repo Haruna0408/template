@@ -1,0 +1,19 @@
+@charset "utf-8";
+@use '../../foundation/vars' as v;
+@use '../../foundation/mixin' as m;
+
+
+/* tag
+-------------------------------------------*/
+.c-tag {
+    // width: ;
+    min-width: 120px;
+    font-size: 1.4rem;
+    letter-spacing: .1em;
+    line-height: 1.3;
+    padding: 3px 10px;
+
+
+    @include m.mq-max(v.$breakpoint-xs) {
+    }
+}

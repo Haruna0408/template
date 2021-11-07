@@ -1,0 +1,26 @@
+@charset "utf-8";
+@use '../../foundation/vars' as v;
+@use '../../foundation/mixin' as m;
+
+/* link
+----------------------------------------------------------------- */
+.u-link {
+
+  &--tel {
+    color: inherit;
+    text-decoration: none;
+    cursor: default;
+  }
+
+}
+
+.u-ancour {
+  &__content {
+    margin-top: -72px;
+    padding-top: 72px;
+  }
+
+  @include m.mq-max(v.$breakpoint-xs) {
+  }
+
+}

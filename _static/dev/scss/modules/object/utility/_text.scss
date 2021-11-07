@@ -1,0 +1,46 @@
+@charset "utf-8";
+@use '../../foundation/vars' as v;
+@use '../../foundation/mixin' as m;
+
+/* text
+----------------------------------------------------------------- */
+.u-text {
+
+  // color
+  &--color {
+    &-theme {
+      color: v.$colorTheme;
+    }
+    &-accent {
+      color: v.$colorAccent;
+    }
+    &--danger {
+      color: v.$colorDanger;
+    }
+    &--em {
+      color: v.$colorEm;
+    }
+    &--sub {
+      color: v.$colorSub;
+    }
+  }
+
+  // font
+  &--font {
+    &-gothic {
+      @include m.gothic;
+    }
+    &-mincho {
+      @include m.mincho;
+    }
+  }
+
+  &--strong {
+    font-weight: bold;
+  }
+
+  &--break {
+    word-wrap: break-word;
+  }
+
+}

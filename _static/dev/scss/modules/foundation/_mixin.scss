@@ -1,0 +1,295 @@
+@charset "utf-8";
+@use './vars';
+
+// ===================================================================
+// utility
+// ===================================================================
+// クリアフィックス（include）
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+// メディアクエリ
+@mixin mq-max($break-point) {
+  @media screen and (max-width: $break-point) {
+    @content;
+  }
+}
+@mixin mq-min($break-point) {
+  @media print, screen and (min-width: $break-point) {
+    @content;
+  }
+}
+@mixin screen($break-point-min, $break-point-max) {
+  @media screen and (min-width: $break-point-min) and (max-width: $break-point-max) {
+    @content;
+  }
+}
+// スマホ縦
+@mixin mq-sp-portrait($break-point: $breakpoint-xs) {
+  @media screen and (max-width: $break-point) and (orientation: portrait) {
+    @content;
+  }
+}
+// スマホ横
+@mixin mq-sp-landscape($break-point: $breakpoint-xs) {
+  @media screen and (max-width: $break-point) and (orientation: landscape) {
+    @content;
+  }
+}
+
+// 三角
+@mixin arrow($direction:left, $width:8px, $height:8px, $arrCol:#fff) {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  @if $direction == left {
+    border-width: $height/2 $width;
+    border-color: transparent $arrCol transparent transparent;
+  }
+  @else if $direction == right {
+    border-width: $height/2 $width;
+    border-color: transparent transparent transparent $arrCol;
+  }
+  @else if $direction == top {
+    border-width: $height $width/2;
+    border-color: transparent transparent $arrCol transparent;
+  }
+  @else if $direction == bottom {
+    border-width: $height $width/2;
+    border-color: $arrCol transparent transparent transparent;
+  }
+  @else {
+    border-width: $height $width/2;
+    border-color: $arrCol transparent transparent transparent;
+  }
+}
+
+//コンテンツ幅
+@mixin l-inner {
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (min-width: 768px) and (max-width: 1024px){
+    width: 96%;
+    max-width: 96%;
+    padding: 0 2%;
+  }
+
+  @media screen and (max-width: 767px){
+    width: 100%;
+    max-width: 100%;
+    padding: 0 4%;
+  }
+}
+
+@mixin l-inner__min {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// ===================================================================
+// font-family
+// ===================================================================
+@mixin gothic {
+  font-family: 'Noto Sans JP', 'メイリオ', Meiryo, sans-serif;
+}
+@mixin mincho {
+  font-family: 'Noto Serif JP', YuMincho, 'Yu Mincho', serif;
+}
+
+
+// ===================================================================
+// font-size → @include fz_vw(xx); （xxにはpixel相当の数値を入れる）
+// ===================================================================
+@function get_vw($size, $viewport:375){
+  $rate: 100 / $viewport;
+  @return $rate * $size * 1vw;
+}
+
+@mixin fz_vw($font_size:10){
+  font-size: $font_size * 1px;
+  font-size: get_vw($font_size);
+}
+
+
+// ===================================================================
+// flex, grid
+// ===================================================================
+@mixin flex {
+    display: flex;
+}
+@mixin flexWrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+@mixin flexColumn {
+  flex-direction: column;
+  > * {
+    max-width: 100%;
+    min-height: 0%;
+  }
+}
+
+@mixin grid {
+  display: grid;
+}
+
+// ===================================================================
+// position
+// ===================================================================
+@mixin center {
+    position: absolute;
+    display: block;
+    content: "";
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+@mixin before {
+    position: absolute;
+    display: block;
+    content: "";
+    left: 0;
+}
+@mixin after {
+    position: absolute;
+    display: block;
+    content: "";
+    right: 0;
+}
+
+
+// ===================================================================
+// animation
+// ===================================================================
+
+//透過
+// @mixin opacity($value: .6) {
+//   @include mq-min($breakpoint-md) {
+//     transition: .3s;
+//     &:hover {
+//       opacity: $value;
+//     }
+//   };
+// }
+
+// 下からフェードイン
+@mixin scrollFedeIn {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: transform 1.2s ease-out .4s, opacity 1.2s ease-out .4s;
+  &.js-show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// テキストラインスライド
+@keyframes maskStart {
+  0%   {
+    right: 100%;
+    left: 0%;
+  }
+  48%  {
+    right: 0%;
+    left: 0%;
+  }
+  52%  {
+    right: 0%;
+    left: 0%;
+  }
+  100% {
+    right: 0%;
+    left: 100%;
+  }
+}
+@mixin slidetext {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  &::before {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 100%;
+  }
+  > span {
+    opacity: 0;
+  }
+}
+
+// ===================================================================
+// form
+// ===================================================================
+
+@mixin resetForm {
+  background: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  appearance: none;
+  border-radius: 0;
+}
+
+// ===================================================================
+// other
+// ===================================================================
+@mixin section {
+  max-width: $width-lg + ($spaceBasePc * 2);
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 $spaceBasePc;
+  @include screen($breakpoint-xs + 1, $breakpoint-sm) {
+    padding-right: 30px;
+    padding-left: 30px;
+  };
+  @include mq-max($breakpoint-xs) {
+    padding-right: #{$spaceBaseSp}px;
+    padding-left: #{$spaceBaseSp}px;
+  };
+  @include mq-sp-portrait($breakpoint-xs) {
+    padding-right: get_vw($spaceBaseSp);
+    padding-left: get_vw($spaceBaseSp);
+  };
+}
+
+// テキスト置換
+@mixin replaceIndent {
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+
+//テキスト省略
+@mixin textClamp {
+  display: -webkit-box;
+  overflow: hidden;
+  /* autoprefixer: off */
+  -webkit-box-orient: vertical;
+  /* autoprefixer: on */
+  -webkit-line-clamp: 3;
+}
+
+// 子要素margin制御
+@mixin childMargin {
+  > * {
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+

@@ -1,0 +1,98 @@
+@charset "utf-8";
+@use '../../foundation/vars' as v;
+@use '../../foundation/mixin' as m;
+
+/* display
+----------------------------------------------------------------- */
+.u-display {
+
+  &--block {
+    &-pc {
+      @include m.mq-min(v.$breakpoint-md) {
+        display: block;
+      }
+    }
+    &-tablet {
+      @include m.mq-max(v.$breakpoint-sm) {
+        display: block;
+      };
+    }
+    &-sp {
+      @include m.mq-max(v.$breakpoint-xs) {
+        display: block;
+      }
+    }
+  }
+
+  &--inline {
+    &-pc {
+      @include m.mq-min(v.$breakpoint-md) {
+        display: inline-block;
+      }
+    }
+    &-tablet {
+      @include m.mq-max(v.$breakpoint-sm) {
+        display: inline-block;
+      }
+    }
+    &-sp {
+      @include m.mq-max(v.$breakpoint-xs) {
+        display: inline-block;
+      };
+    }
+  }
+
+}
+
+.u-show {
+  &--pc {
+    @include m.mq-max(v.$breakpoint-sm) {
+      display: none!important;
+    }
+    @include m.mq-min(v.$breakpoint-md) {
+      display: inherit!important;
+    }
+  }
+  &--tab {
+    @include m.mq-max(v.$breakpoint-xs) {
+      display: none!important;
+    }
+    @include m.mq-min(v.$breakpoint-xs + 1) {
+      display: inherit!important;
+    }
+  }
+  &--sp {
+    @include m.mq-max(v.$breakpoint-xs) {
+      display: inherit!important;
+    }
+    @include m.mq-min(v.$breakpoint-xs + 1) {
+      display: none!important;
+    }
+  }
+  &--xs { // only iPhone5,iPhoneSE
+    @include m.mq-max(v.$breakpoint-xxs) {
+      display: inherit!important;
+    }
+    @include m.mq-min(v.$breakpoint-xxs + 1) {
+      display: none!important;
+    }
+  }
+}
+
+.u-hide {
+  &--pc {
+    @include m.mq-min(v.$breakpoint-md) {
+      display: none!important;
+    }
+  }
+  &--tab {
+    @include m.mq-min(v.$breakpoint-sm) {
+      display: none!important;
+    }
+  }
+  &--sp {
+    @include m.mq-max(v.$breakpoint-sm) {
+      display: none!important;
+    }
+  }
+}

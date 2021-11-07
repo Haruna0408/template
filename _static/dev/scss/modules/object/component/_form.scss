@@ -1,0 +1,35 @@
+@charset "utf-8";
+@use '../../foundation/vars' as v;
+@use '../../foundation/mixin' as m;
+
+
+/* form parts
+-------------------------------------------*/
+.c-validation {
+    background-color: red;
+    color: v.$colorTheme;
+    font-size: 1.4rem;
+    letter-spacing: .05em;
+    font-weight: 500;
+
+    @include m.mq-max(v.$breakpoint-xs) {
+    }
+}
+
+.c-form {
+    &__area {
+
+    }
+
+    &__wrap {
+
+    }
+
+    &__table {
+    }
+
+
+
+    @include m.mq-max(v.$breakpoint-xs) {
+    }
+}

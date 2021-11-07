@@ -1,0 +1,61 @@
+@charset "utf-8";
+@use '../../foundation/vars' as v;
+@use '../../foundation/mixin' as m;
+
+/* sns
+----------------------------------------------------------------- */
+.p-sns {
+    &__list {
+        @include m.l-inner;
+        @include m.flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__item {
+        margin-right: 15px;
+        max-width: 100%;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+
+    @include m.mq-max(v.$breakpoint-xs) {
+    }
+}
+
+
+.p-sns--share {
+    &__list {
+        @extend .p-sns__list;
+    }
+
+    &__item {
+        width: calc( 100% / 4 - 10px / 3 );
+
+        // &.facebook__link {
+
+        // }
+
+        // &.twitter__link {
+
+        // }
+
+        // &.line__link {
+
+        // }
+
+        // &.hatena__link {
+
+        // }
+    }
+
+    @include m.mq-max(v.$breakpoint-xs) {
+    }
+
+    //参考:
+    //https://125naroom.com/web/3327
+    //https://www.torat.jp/wordpress-sns-share/
+}
