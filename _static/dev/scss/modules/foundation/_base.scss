@@ -22,7 +22,6 @@ html{
 body {
   // min-width: 1025px;
   position: relative;
-  overflow: hidden;
   @include m.gothic;
 	font-size: v.$fontsizeBasePc;
 	font-weight: 400;
