@@ -541,15 +541,6 @@ iframe {
 .button__base--radius {
   border-radius: 50%;
 }
-/* form parts
--------------------------------------------*/
-.c-validation {
-  background-color: red;
-  color: #fff;
-  font-size: 1.4rem;
-  letter-spacing: 0.05em;
-  font-weight: 500;
-}
 /* icon
 -------------------------------------------*/
 .c-icon__line {

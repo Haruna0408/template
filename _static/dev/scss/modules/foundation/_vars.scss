@@ -25,6 +25,17 @@ $breakpoint-mxs: 960px;
 $breakpoint-sm: 1024px; // tablet -ipad pro
 $breakpoint-md: ($breakpoint-sm + 1); // pc
 $breakpoint-lg: $width-lg;
+$desktop-max: 1199px;
+$laptop-max: 992px;
+
+// タブレット
+$laptop-max: 991px;
+$laptop-min: 768px;
+$tablet-max: 767px;
+$tablet-min: 600px;
+
+// スマホ用のブレイクポイント
+// $sp-max: 599px;
 
 $viewport: 375px;
 

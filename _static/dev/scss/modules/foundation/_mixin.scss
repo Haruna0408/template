@@ -42,6 +42,87 @@
   }
 }
 
+
+// 1199px以上
+@mixin desktop-max__min {
+    @media (min-width: ($desktop-max)) {
+        @content;
+    }
+}
+
+// 1199px以下
+@mixin desktop-max {
+    @media (max-width: ($desktop-max)) {
+        @content;
+    }
+}
+
+// 1199px〜992px
+@mixin screen-desktop {
+    @media screen and (min-width: $laptop-max) and (max-width: $desktop-max) {
+        @content;
+    }
+}
+
+// 991px以下
+@mixin laptop-max {
+    @media (max-width: ($laptop-max)) {
+        @content;
+    }
+}
+
+// 1199px〜768px
+@mixin screen-lap-and-desktop {
+    @media screen and (min-width: $laptop-min) and (max-width: $desktop-max) {
+        @content;
+    }
+}
+
+// 991px〜768px
+@mixin screen-laptop {
+    @media screen and (min-width: $laptop-min) and (max-width: $laptop-max) {
+        @content;
+    }
+}
+
+// 767px以下
+@mixin tablet-max {
+    @media (max-width: ($tablet-max)) {
+        @content;
+    }
+}
+
+// 767px~600px
+@mixin screen-tablet {
+    @media screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
+        @content;
+    }
+}
+
+// 599px以下
+// @mixin screen-sp {
+//     @media (max-width: ($sp-max)) {
+//         @content;
+//     }
+// }
+
+// 768以下
+// @include screen-sp {
+//     .pc {
+//         display: none !important;
+//     }
+
+//     .tb {
+//         display: none !important;
+//     }
+
+//     .sp {
+//         display: block;
+//     }
+// }
+
+
+
 // 三角
 @mixin arrow($direction:left, $width:8px, $height:8px, $arrCol:#fff) {
   content: "";
@@ -110,14 +191,26 @@
 // ===================================================================
 // font-size → @include fz_vw(xx); （xxにはpixel相当の数値を入れる）
 // ===================================================================
-@function get_vw($size, $viewport:375){
-  $rate: 100 / $viewport;
-  @return $rate * $size * 1vw;
+//FontSize
+$baseSize: 10;
+@function rem($pixels) {
+    @return $pixels / $baseSize * 1rem;
 }
 
-@mixin fz_vw($font_size:10){
-  font-size: $font_size * 1px;
-  font-size: get_vw($font_size);
+@mixin fz($size: 16) {
+    font-size: $size + px;
+    font-size: ($size / 10) + rem;
+}
+
+// フォントサイズSP以下
+@function vw($size, $viewport:375) {
+    $rate: 100 / $viewport;
+    @return $rate * $size * 1vw;
+}
+
+@mixin fz_vw($font_size:10) {
+    font-size: $font_size * 1px;
+    font-size: get_vw($font_size);
 }
 
 
