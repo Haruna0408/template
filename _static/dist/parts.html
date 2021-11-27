@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <!-- meta ---->
+    <!-- meta --->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,17 +9,21 @@
     <!-- 公開時削除↓↓ -->
     <meta name="robots" content="noindex,nofollow" />
     <!-- 公開時削除↑↑ -->
-    <!-- title ---->
+
+    <!-- title --->
     <title>インデックス | テンプレート</title>
-    <!-- font ----->
+
+    <!-- font -->
     <!-- /notosans -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
     <!-- /opensans -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
-    <!-- css ---->
+
+    <!-- css --->
     <link rel="stylesheet" href="./assets/css/style.css">
-    <!--- favicon --->
+
+    <!--- favicon -->
     <link rel="icon" href="/assets/img/common/favicon.ico">
     <link rel="apple-touch-icon" href="/assets/img/common/apple-touch-icon.png" sizes="180x180">
     <link rel="icon" type="image/png" href="/assets/img/common/favicon-16x16.png" sizes="16x16">
@@ -29,26 +33,31 @@
     <link rel="icon" type="image/png" href="/assets/img/common/android-chrome-512x512.png" sizes="512x512">
     <!-- /スマホ用アイコン画像 -->
     <link rel="apple-touch-icon-precomposed" href="画像のURL" />
+
     <!-- OGP -->
-    <meta property="og:url" content="ページのURL" />
+    <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#"></head><!-- 記事ページの場合-->
+    <meta property="og:url" content="ページのURL//絶対パス" />
     <meta property="og:title" content="ページのタイトル" />
     <meta property="og:type" content="ページのタイプ">
+    <meta property="og:image" content="画像のURL//絶対パス" />
+    <!-- /↑↑OGP必須 -->
     <meta property="og:description" content="記事の抜粋" />
-    <meta property="og:image" content="画像のURL" />
     <meta property="og:site_name" content="サイト名" />
     <meta property="og:locale" content="ja_JP" />
     <meta property="fb:app_id" content="appIDを入力" />
+    <!-- /↑↑OGP任意 -->
     <!-- twitter card -->
     <meta name="twitter:card" content="カード種類" />
     <meta name="twitter:site" content="@Twitterユーザー名" />
-    <!-- Google Analytics Tag -head内- -->
-    <!-- <script></script> -->
+
+    <!-- Google Analytics Tag -head内用- -->
 </head>
 
 <body>
-    <!-- Google Analytics Tag -body直下- -->
 
-    <!------/ Loading -->
+    <!-- Google Analytics Tag -body直下用- -->
+
+    <!--/ Loading -->
     <div id="loading">
         <div class="p-loading__item"></div>
         <!-- <p class="p-loading__img"><img src="./assets/img/img_about.png" alt="ローディング画像"></p> -->
@@ -57,7 +66,7 @@
 
     <div class="l-wrapper">
 
-        <!------/ Header -->
+        <!--/ Header -->
         <header id="header" class="l-header">
             <div class="l-header__content l-header__inner">
                 <div class="l-header__top">
@@ -100,9 +109,9 @@
             <!--.l-header__content /-->
         </header>
         <!--.l-header /-->
-        <!------ Header /-->
+        <!-- Header /-->
 
-        <!------/ Aeticle ----->
+        <!--/ Aeticle -->
         <article class="l-article">
 
             <main class="l-main">
@@ -307,9 +316,9 @@
             <!--.l-main /-->
         </article>
         <!--.l-article /-->
-        <!------ Article /----->
+        <!-- Article /-->
 
-        <!------/ Footer -->
+        <!--/ Footer -->
         <footer class="l-footer">
             <div class="l-footer__top">
 
@@ -333,12 +342,12 @@
 
         </footer>
         <!--.l-footer /-->
-        <!------ Footer /--->
+        <!-- Footer /-->
 
     </div>
     <!--.l-wrapper /-->
 
-    <!----------- JavaScript -->
+    <!---- JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script><!-- /全体-->
     <script src="./assets/js/slick.min.js"></script><!-- /slick-->
     <script src="./assets/js/common.js"></script><!-- /共通-->
