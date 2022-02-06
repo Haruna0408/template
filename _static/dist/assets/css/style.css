@@ -2438,12 +2438,105 @@ h2 {
   }
 }
 
-/* image
+/* background clip
+----------------------------------------------------------------- */
+.u-bg__clip {
+  background-image: linear-gradient(to right, #d83819, #E2CC28, #57DB51);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: rgba(255, 255, 255, 0);
+}
+.u-bg__clip__text {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+/* image Base
 ----------------------------------------------------------------- */
 .u-image--object {
   object-fit: cover;
   object-position: center;
   font-family: "object-fit: cover";
+}
+
+/* mask image - 複雑なマスクをしたい　透明度を用いた表現-
+----------------------------------------------------------------- */
+.u-img__mask {
+  -webkit-mask-image: url("../images/maskicon-star.svg");
+  mask-image: url("../images/maskicon-star.svg");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: 38% 62%;
+  mask-position: 38% 62%;
+  -webkit-mask-size: 30%;
+  mask-size: 30%;
+  /*テキストのホバーマスクアニメーション*/
+  /*画像のホバーマスクアニメーション*/
+}
+.u-img__mask--hover__link {
+  background-image: linear-gradient(to right, #333333 50%, #f0f0f0 50%);
+  background-size: 200% 100%;
+  background-position-x: 100%;
+  font-size: 24px;
+  font-weight: 700;
+  transition: 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.u-img__mask--hover__link:hover {
+  background-position-x: 0;
+  opacity: 1;
+}
+.u-img__mask--hover__link:hover .u-img__mask--hover__text {
+  background-position-x: 0;
+}
+.u-img__mask--hover__text {
+  display: inline-block;
+  padding: 12px 24px;
+  background-image: linear-gradient(to right, #f0f0f0 50%, #333333 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-size: inherit;
+  background-position-x: 100%;
+  color: rgba(255, 255, 255, 0);
+  transition: inherit;
+}
+.u-img__mask--animation {
+  position: relative;
+  cursor: pointer;
+}
+.u-img__mask--animation:hover {
+  opacity: 1;
+}
+.u-img__mask--animation:hover .u-img__mask--animation__img {
+  mask-size: 100% 100%;
+  -webkit-mask-size: 100% 100%;
+}
+.u-img__mask--animation__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: grayscale(100%);
+}
+.u-img__mask--animation__img {
+  position: relative;
+  mask-image: radial-gradient(black 50%, rgba(255, 255, 255, 0) 100%);
+  mask-size: 0;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  -webkit-mask-image: radial-gradient(black 50%, rgba(255, 255, 255, 0) 100%);
+  -webkit-mask-size: 0 0;
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  transition: 1s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* clip Path image -単純なマスクをしたい　輪郭がはっきりした表現-
+----------------------------------------------------------------- */
+.u-img__clip {
+  width: 100%;
+  height: 50%;
+  background-color: skyblue;
+  clip-path: ellipse(50% 20% at 50% 20%);
+  clip-path: inset(50px round 20px);
 }
 
 /* js

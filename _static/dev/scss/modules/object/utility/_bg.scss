@@ -70,3 +70,27 @@
 
 }
 
+
+/* background clip
+----------------------------------------------------------------- */
+.u-bg__clip {
+  //画像
+  //background-image: url("../images/img-clippath.jpg");
+  //background-position: bottom;
+  //background-clip: text;
+  //-webkit-background-clip: text;
+  //color: rgba(255, 255, 255, 0);//transparents
+
+  //グラデーション
+  background-image: linear-gradient(to right, #d83819, #E2CC28, #57DB51);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: rgba(255, 255, 255, 0);//transparent
+
+  &__text {
+
+    font-size: 48px;
+    font-weight: 700;
+  }
+}
+//参考:https://ics.media/entry/210701/

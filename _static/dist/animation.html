@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- meta --->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ページの内容を表す文章" />
+    <!-- 公開時削除↓↓ -->
+    <meta name="robots" content="noindex,nofollow" />
+    <!-- 公開時削除↑↑ -->
+
+    <!-- title --->
+    <title>インデックス | テンプレート</title>
+
+    <!-- font -->
+    <!-- /notosans -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+    <!-- /opensans -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+
+    <!-- css --->
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!--- favicon -->
+    <link rel="icon" href="/assets/img/common/favicon.ico">
+    <link rel="apple-touch-icon" href="/assets/img/common/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="/assets/img/common/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/assets/img/common/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/assets/img/common/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/assets/img/common/android-chrome-256x256.png" sizes="256x256">
+    <link rel="icon" type="image/png" href="/assets/img/common/android-chrome-512x512.png" sizes="512x512">
+    <!-- /スマホ用アイコン画像 -->
+    <link rel="apple-touch-icon-precomposed" href="画像のURL" />
+
+    <!-- OGP -->
+    <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#"></head><!-- 記事ページの場合-->
+    <meta property="og:url" content="ページのURL//絶対パス" />
+    <meta property="og:title" content="ページのタイトル" />
+    <meta property="og:type" content="ページのタイプ">
+    <meta property="og:image" content="画像のURL//絶対パス" />
+    <!-- /↑↑OGP必須 -->
+    <meta property="og:description" content="記事の抜粋" />
+    <meta property="og:site_name" content="サイト名" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="fb:app_id" content="appIDを入力" />
+    <!-- /↑↑OGP任意 -->
+    <!-- twitter card -->
+    <meta name="twitter:card" content="カード種類" />
+    <meta name="twitter:site" content="@Twitterユーザー名" />
+
+    <!-- Google Analytics Tag -head内用- -->
+</head>
+
+<body>
+
+    <!-- Google Analytics Tag -body直下用- -->
+
+    <!--/ Loading -->
+    <div id="loading">
+        <div class="p-loading__item"></div>
+        <!-- <p class="p-loading__img"><img src="./assets/img/img_about.png" alt="ローディング画像"></p> -->
+        <p class="p-loading__text">Loading...</p>
+    </div>
+
+    <div class="l-wrapper">
+
+        <!--/ Header -->
+        <header id="header" class="l-header">
+            <div class="l-header__content l-header__inner">
+                <div class="l-header__top">
+                    <!-- <ul class="p-logo__list">
+                        <li class="p-logo__item p-logo__01"> -->
+                    <h1 class="p-logo">
+                        <a href="/" class="p-logo__link">
+                            ロゴ
+                            <!-- <img src="./assets/img/common/logo_01.svg" alt="ロゴ"> -->
+                        </a>
+                    </h1>
+                    <!-- </li>
+                    </ul> -->
+                </div>
+                <div class="p-nav__area drower">
+                    <nav class="p-nav__content">
+                        <ul class="p-nav__list">
+                            <li class="p-nav__item">
+                                <a href="./contact/" class="p-nav__link js-open__trigger">about</a>
+                            </li>
+                            <li class="p-nav__item">
+                                <a href="#" class="p-nav__link js-open__trigger">blog</a>
+                            </li>
+                        </ul>
+                        <!-- <div class="c-globalnav__button _sp js-close_trigger">
+                            <p class="c-button__green">
+                                <span class="c-button__radius c-button__close">メニューを閉じる</span>
+                            </p>
+                        </div> -->
+                    </nav>
+                </div>
+                <!-- .c-globalnav__area /-->
+                <button type="button" class="p-hamburger p-hamburger__button" aria-expanded="false">
+                    <span class="p-hamburger__line one"></span>
+                    <span class="p-hamburger__line two"></span>
+                    <span class="p-hamburger__line three"></span>
+                    <span class="p-hamburger__text"></span>
+                </button><!-- p-hambergermenu /-->
+            </div>
+            <!--.l-header__content /-->
+        </header>
+        <!--.l-header /-->
+        <!-- Header /-->
+
+        <!--/ Aeticle -->
+        <article class="l-article">
+
+            <main class="l-main">
+
+                <section class="l-section l-animation img__area">
+                    <div class="l-inner">
+                        <!-- img mask -->
+                        <div class="u-img__mask">
+                            <img src="./assets/images/img-mask.jpg" alt="マスク用サンプル画像" ><!--ベースの写真-->
+                        </div>
+
+                        <!-- img clip path -->
+                        <div class="u-img__clip">
+                            <img src="./assets/images/img-clippath.jpg" alt="クリップパスサンプル画像" ><!--ベースの写真-->
+                        </div>
+
+                        <!-- background clip -->
+                        <div class="u-bg__clip">
+                            <p class="u-bg__clip__text">TEXT</p>
+                        </div>
+
+                        <!-- gradation & mask-img -->
+                        <div class="u-img__mask--hover">
+                            <a class="u-img__mask--hover__link" href="#">
+                                <span class="u-img__mask--hover__text">HOVER</span>
+                            </a>
+                        </div>
+
+                        <!-- img mask & hover animation-->
+                        <div class="u-img__mask--animation">
+                            <img src="./assets/images/img-mask.jpg" class="u-img__mask--animation__bg" alt="背景用画像" ><!--背景の写真-->
+                            <img src="./assets/images/img-mask.jpg" class="u-img__mask--animation__img" alt="マスク用画像" ><!--imgの写真-->
+                        </div>
+                    </div>
+                </section>
+
+
+                <section class="l-section l-animation svg__area">
+                    <div class="l-inner">
+                        <!-- svg mask SVG -->
+                        <!-- <svg>
+                            <defs> -->
+                            <!-- マスク用の図形 -->
+                            <!-- <mask id="circle">
+                                <circle cx="100" cy="100" r="80" fill="#fff"></circle>
+                            </mask>
+                            </defs> -->
+                            <!-- 切り抜かれる要素 -->
+                            <!-- <rect x="0" y="0" width="100%" height="100%" mask="(#circle)" fill="#000"/> 
+                        </svg>-->
+
+                        <!-- svg clipPath SVG -->
+                        <!-- <svg>
+                            <defs> -->
+                            <!-- マスク用の図形 -->
+                            <!-- <clipPath id="circle">
+                                <circle cx="100" cy="100" r="80" fill="#000"></circle>
+                            </clipPath>
+                            </defs> -->
+                            <!-- 切り抜かれる要素 -->
+                            <!-- <rect x="0" y="0" width="100%" height="100%" clip-path="(#circle)"/>
+                        </svg> -->
+                    </div>
+                </section>
+
+
+                <!--sns 記事シェア-->
+                <ul class="p-sns--share__list">
+                    <li class="p-sns--share__item facebook__link">
+                        <!--Facebookボタン-->
+                        <a href="//www.facebook.com/sharer.php?src=bm&u=<?php echo $url_encode;?>&t=<?php echo $title_encode;?>"
+                            onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;">
+                            <i class="fa fa-facebook"></i><span>facebook</span>
+                        </a>
+                    </li>
+                    <!--ツイートボタン-->
+                    <li class="p-sns--share__item twitter_link">
+                        <a href="//twitter.com/intent/tweet?url=<?php echo $url_encode ?>&text=<?php echo $title_encode ?>&tw_p=tweetbutton"
+                            onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;">
+                            <i class="fa fa-twitter"></i><span> tweet</span>
+                        </a>
+                    </li>
+
+                    <!--LINEボタン-->
+                    <li class="p-sns--share__item line__link">
+                        <a href="//social-plugins.line.me/lineit/share?url=<?php echo $url_encode;?>"
+                            onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=500');return false;">
+                            <span>LINE</span>
+                        </a>
+                    </li>
+
+                    <!--はてなボタン-->
+                    <li class="p-sns--share__item hatena__link">
+                        <a href="//b.hatena.ne.jp/entry/<?php echo $url_encode ?>"
+                            onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=510');return false;"><i
+                                class="fa fa-hatena"></i><span> はてブ</span>
+                        </a>
+                    </li>
+                </ul>
+
+            </main>
+            <!--.l-main /-->
+        </article>
+        <!--.l-article /-->
+        <!-- Article /-->
+
+        <!--/ Footer -->
+        <footer class="l-footer">
+            <div class="l-footer__top">
+
+            </div>
+            <div class="p-copyright">
+                <p class="p-copyright__text">&copy;&nbsp;2021 Haruna Ishikawa</p>
+            </div>
+            <!--.l-copright /-->
+
+            <ul class="p-floating__list">
+                <li class="p-floating__item">
+                    <a href="#" class="icon- p-floating__button"></a>
+                </li>
+            </ul><!-- .p-floating /-->
+
+            <div class="p-pagetop">
+                <a href="#" class="p-pagetop__link">
+                    <img src="/assets/img/common/icon_pagetop.png" alt="ページトップへ戻る">
+                </a>
+            </div><!-- .p-pagetop /-->
+
+        </footer>
+        <!--.l-footer /-->
+        <!-- Footer /-->
+
+    </div>
+    <!--.l-wrapper /-->
+
+    <!---- JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script><!-- /全体-->
+    <script src="./assets/js/slick.min.js"></script><!-- /slick-->
+    <script src="./assets/js/common.js"></script><!-- /共通-->
+    <script src="./assets/js/animation.js"></script><!-- /アニメーション用-->
+    <script src="./assets/js/slider.js"></script><!-- /スライダー用-->
+
+</body>
+</html>
