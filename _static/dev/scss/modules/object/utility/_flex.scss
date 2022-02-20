@@ -6,6 +6,7 @@
 ----------------------------------------------------------------- */
 .u-flex {
   display: flex;
+  flex-wrap: wrap;
   &--pc {
     @include m.mq-max(v.$breakpoint-sm) {
       display: flex;

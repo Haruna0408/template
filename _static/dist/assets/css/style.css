@@ -1557,6 +1557,7 @@ h2 {
 ----------------------------------------------------------------- */
 .u-flex {
   display: flex;
+  flex-wrap: wrap;
 }
 @media screen and (max-width: 1024px) {
   .u-flex--pc {
