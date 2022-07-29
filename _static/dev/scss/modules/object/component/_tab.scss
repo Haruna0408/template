@@ -1,0 +1,81 @@
+@charset "utf-8";
+@use '../../foundation/vars' as v;
+@use '../../foundation/mixin' as m;
+
+
+/* tab
+-------------------------------------------*/
+// CSS ver
+//radioボタンを非表示
+input[name="tab__item"] {
+    display: none;
+}
+
+.c-tab {
+   &__container {
+        background-color: #fff;
+        margin: 0 auto;
+        border: 1px solid #37beb0;
+    }
+
+   &__switch  {
+
+        &__list {
+            display: flex;
+            justify-content: space-between;
+
+            // li {
+            //     width: calc( 100% / 3 );
+            // }
+        }
+
+        &__item {
+            width: calc( 100% / 3);
+            display: block;
+            height: 100%;
+            padding: 15px 0;
+            border-bottom: 3px solid #37beb0;
+            background-color: #ececec;
+            text-align: center;
+            color: #37beb0 ;
+            text-align: center;
+            font-weight: bold;
+            transition: all 0.2s ease;
+
+            &:hover {
+                opacity: 0.75;
+                cursor: pointer;
+            }
+        }
+
+    }
+
+    &__content {
+        display: none;
+        padding: 1em 1em 0;
+    }
+
+    @include m.mq-max(v.$breakpoint-xs) {
+    }
+}
+
+//タブボタンを押した時(アクティブ時)
+#tab1:checked ~ .c-tab__switch__list .tab-label1 {
+    background-color: #37beb0;
+    color: #fff;
+}
+#tab2:checked ~ .c-tab__switch__list .tab-label2 {
+    background-color: #37beb0;
+    color: #fff;
+}
+#tab3:checked ~ .c-tab__switch__list .tab-label3 {
+    background-color: #37beb0;
+    color: #fff;
+}
+
+//タブコンテンツ内の切り替え
+#tab1:checked ~ .c-tab__content__wrap > #tab1_content,
+#tab2:checked ~ .c-tab__content__wrap > #tab2_content,
+#tab3:checked ~ .c-tab__content__wrap > #tab3_content {
+    display: block;
+}

@@ -594,6 +594,63 @@ h2 {
   font-size: 48px;
 }
 
+/* tab
+-------------------------------------------*/
+input[name=tab__item] {
+  display: none;
+}
+
+.c-tab__container {
+  background-color: #fff;
+  margin: 0 auto;
+  border: 1px solid #37beb0;
+}
+.c-tab__switch__list {
+  display: flex;
+  justify-content: space-between;
+}
+.c-tab__switch__item {
+  width: calc( 100% / 3);
+  display: block;
+  height: 100%;
+  padding: 15px 0;
+  border-bottom: 3px solid #37beb0;
+  background-color: #ececec;
+  text-align: center;
+  color: #37beb0;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+.c-tab__switch__item:hover {
+  opacity: 0.75;
+  cursor: pointer;
+}
+.c-tab__content {
+  display: none;
+  padding: 1em 1em 0;
+}
+#tab1:checked ~ .c-tab__switch__list .tab-label1 {
+  background-color: #37beb0;
+  color: #fff;
+}
+
+#tab2:checked ~ .c-tab__switch__list .tab-label2 {
+  background-color: #37beb0;
+  color: #fff;
+}
+
+#tab3:checked ~ .c-tab__switch__list .tab-label3 {
+  background-color: #37beb0;
+  color: #fff;
+}
+
+#tab1:checked ~ .c-tab__content__wrap > #tab1_content,
+#tab2:checked ~ .c-tab__content__wrap > #tab2_content,
+#tab3:checked ~ .c-tab__content__wrap > #tab3_content {
+  display: block;
+}
+
 /* rss
 ----------------------------------------------------------------- */
 .c-rss__list {
