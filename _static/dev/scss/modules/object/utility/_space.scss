@@ -1,81 +1,278 @@
 @charset "utf-8";
-@use '../../foundation/vars' as v;
-@use '../../foundation/mixin' as m;
+@use "../../foundation/vars" as v;
+@use "../../foundation/mixin" as m;
 
 /* margin, padding
 ----------------------------------------------------------------- */
-$spaces:(
-  xl: 100px,
-  xlsp: 60px,
-  lg: 60px,
-  lgsp: 30px,
-  md: 30px,
-  mdsp: 20px,
-  sm: 20px,
-  smsp: 10px,
-  xs: 10px,
-  xssp: 5px
-);
-$direction:(
-  top: t,
-  right: r,
-  bottom: b,
-  left: l
-);
-@mixin space($property) {
-  &--0 {
-    #{$property}: 0!important;
-  }
-  @each $key, $class in $direction {
-    &--#{$class} {
-      &-0 {
-        #{$property}-#{$key}: 0!important;
-      }
-      &-xl {
-        #{$property}-#{$key}: map-get($spaces, 'xl')!important;
-        @include m.mq-max(v.$breakpoint-sm) {
-          #{$property}-#{$key}: map-get($spaces, 'xlsp')!important;
-        };
-      }
-      &-lg {
-        #{$property}-#{$key}: map-get($spaces, 'lg')!important;
-        @include m.mq-max(v.$breakpoint-sm) {
-          #{$property}-#{$key}: map-get($spaces, 'lgsp')!important;
-        };
-      }
-      &-md {
-        #{$property}-#{$key}: map-get($spaces, 'md')!important;
-        @include m.mq-max(v.$breakpoint-sm) {
-          #{$property}-#{$key}: map-get($spaces, 'mdsp')!important;
-        };
-      }
-      &-sm {
-        #{$property}-#{$key}: map-get($spaces, 'sm')!important;
-        @include m.mq-max(v.$breakpoint-sm) {
-          #{$property}-#{$key}: map-get($spaces, 'smsp')!important;
-        };
-      }
-      &-xs {
-        #{$property}-#{$key}: map-get($spaces, 'xs')!important;
-        @include m.mq-max(v.$breakpoint-sm) {
-          #{$property}-#{$key}: map-get($spaces, 'xssp')!important;
-        };
-      }
-    }
-  }
-}
+// $spaces:(
+//   xl: 100px,
+//   xlsp: 60px,
+//   lg: 60px,
+//   lgsp: 30px,
+//   md: 30px,
+//   mdsp: 20px,
+//   sm: 20px,
+//   smsp: 10px,
+//   xs: 10px,
+//   xssp: 5px
+// );
+// $direction:(
+//   top: t,
+//   right: r,
+//   bottom: b,
+//   left: l
+// );
+// @mixin space($property) {
+//   &--0 {
+//     #{$property}: 0!important;
+//   }
+//   @each $key, $class in $direction {
+//     &--#{$class} {
+//       &-0 {
+//         #{$property}-#{$key}: 0!important;
+//       }
+//       &-xl {
+//         #{$property}-#{$key}: map-get($spaces, 'xl')!important;
+//         @include m.mq-max(v.$breakpoint-sm) {
+//           #{$property}-#{$key}: map-get($spaces, 'xlsp')!important;
+//         };
+//       }
+//       &-lg {
+//         #{$property}-#{$key}: map-get($spaces, 'lg')!important;
+//         @include m.mq-max(v.$breakpoint-sm) {
+//           #{$property}-#{$key}: map-get($spaces, 'lgsp')!important;
+//         };
+//       }
+//       &-md {
+//         #{$property}-#{$key}: map-get($spaces, 'md')!important;
+//         @include m.mq-max(v.$breakpoint-sm) {
+//           #{$property}-#{$key}: map-get($spaces, 'mdsp')!important;
+//         };
+//       }
+//       &-sm {
+//         #{$property}-#{$key}: map-get($spaces, 'sm')!important;
+//         @include m.mq-max(v.$breakpoint-sm) {
+//           #{$property}-#{$key}: map-get($spaces, 'smsp')!important;
+//         };
+//       }
+//       &-xs {
+//         #{$property}-#{$key}: map-get($spaces, 'xs')!important;
+//         @include m.mq-max(v.$breakpoint-sm) {
+//           #{$property}-#{$key}: map-get($spaces, 'xssp')!important;
+//         };
+//       }
+//     }
+//   }
+// }
 
 // margin
-.u-mg {
-  @include space(margin);
-  @each $key, $class in $direction {
-    &--#{$class}-auto {
-      margin-#{$key}: auto!important;
+// .u-mg {
+//   @include space(margin);
+//   @each $key, $class in $direction {
+//     &--#{$class}-auto {
+//       margin-#{$key}: auto!important;
+//     }
+//   }
+// }
+
+// padding
+// .u-pd {
+//   @include space(padding);
+// }
+
+/**
+ * 余白
+ */
+
+/*独自の余白設定*/
+$space-unit: 1rem !default; //16px
+$original-margins: (
+  "unit": 1rem,
+  "xxs": (
+    0.25 * $space-unit,
+  ),
+  // 4px
+  "xs":
+    (
+      0.5 * $space-unit,
+    ),
+  // 8px
+  "sm":
+    (
+      0.75 * $space-unit,
+    ),
+  // 12px
+  "md":
+    (
+      1.25 * $space-unit,
+    ),
+  // 20px
+  "lg":
+    (
+      2 * $space-unit,
+    ),
+  // 32px
+  "xl":
+    (
+      3.25 * $space-unit,
+    ),
+  // 52px
+  "xxl":
+    (
+      5.25 * $space-unit,
+    ),
+  // 84px
+  "0":
+    (
+      $space-unit * 0,
+    ),
+);
+
+/* 余白の設定 */
+@each $size, $length in $original-margins {
+  .m-#{$size} {
+    margin: #{$length} !important;
+  }
+
+  .mt-#{$size} {
+    margin-top: #{$length} !important;
+  }
+
+  .mr-#{$size} {
+    margin-right: #{$length} !important;
+  }
+
+  .mb-#{$size} {
+    margin-bottom: #{$length} !important;
+  }
+
+  .ml-#{$size} {
+    margin-left: #{$length} !important;
+  }
+
+  .mx-#{$size} {
+    margin-left: #{$length} !important;
+    margin-right: #{$length} !important;
+  }
+
+  .my-#{$size} {
+    margin-top: #{$length} !important;
+    margin-bottom: #{$length} !important;
+  }
+
+  .p-#{$size} {
+    padding: #{$length} !important;
+  }
+
+  .pt-#{$size} {
+    padding-top: #{$length} !important;
+  }
+
+  .pr-#{$size} {
+    padding-right: #{$length} !important;
+  }
+
+  .pb-#{$size} {
+    padding-bottom: #{$length} !important;
+  }
+
+  .pl-#{$size} {
+    padding-left: #{$length} !important;
+  }
+
+  .px-#{$size} {
+    padding-left: #{$length} !important;
+    padding-right: #{$length} !important;
+  }
+
+  .py-#{$size} {
+    padding-top: #{$length} !important;
+    padding-bottom: #{$length} !important;
+  }
+
+  @include mq-max {
+    .m-sp-#{$size} {
+      margin: #{$length} !important;
+    }
+
+    .mt-sp-#{$size} {
+      margin-top: #{$length} !important;
+    }
+
+    .mr-sp-#{$size} {
+      margin-right: #{$length} !important;
+    }
+
+    .mb-sp-#{$size} {
+      margin-bottom: #{$length} !important;
+    }
+
+    .ml-sp-#{$size} {
+      margin-left: #{$length} !important;
+    }
+
+    .mx-sp-#{$size} {
+      margin-left: #{$length} !important;
+      margin-right: #{$length} !important;
+    }
+
+    .my-sp-#{$size} {
+      margin-top: #{$length} !important;
+      margin-bottom: #{$length} !important;
+    }
+
+    .p-sp-#{$size} {
+      padding: #{$length} !important;
+    }
+
+    .pt-sp-#{$size} {
+      padding-top: #{$length} !important;
+    }
+
+    .pr-sp-#{$size} {
+      padding-right: #{$length} !important;
+    }
+
+    .pb-sp-#{$size} {
+      padding-bottom: #{$length} !important;
+    }
+
+    .pl-sp-#{$size} {
+      padding-left: #{$length} !important;
+    }
+
+    .px-sp-#{$size} {
+      padding-left: #{$length} !important;
+      padding-right: #{$length} !important;
+    }
+
+    .py-sp-sp-#{$size} {
+      padding-top: #{$length} !important;
+      padding-bottom: #{$length} !important;
     }
   }
 }
 
-// padding
-.u-pd {
-  @include space(padding);
-}
+//使用方法
+//.m{方向}-{大きさ}　：　マージン余白
+//.p{方向}-{大きさ}　：　パディング余白
+
+//{方向}
+//無し：全方向（top left bottom right）
+//t：top
+//r：right
+//b：bottom
+//l：left
+//x：left & right
+//y：top & bottom
+
+//{大きさ}
+//space-unit : 16px
+//xxs：4px
+//xs：8px
+// sm：12px
+// md：20px
+// lg：32px
+// xl：52px
+// xxl：84px
+// 0：0
