@@ -1,14 +1,30 @@
 @charset "utf-8";
-@use '../../foundation/vars' as v;
-@use '../../foundation/mixin' as m;
+@use "../../foundation/vars" as v;
+@use "../../foundation/mixin" as m;
 
 /* js
 ----------------------------------------------------------------- */
 .js {
+  //ハンバーガメニューをクリックすると背景がつく
+  &-bgBlack {
+    &::before {
+      @include m.mq-max(v.$breakpoint-xs) {
+        display: block;
+        content: "";
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        z-index: 3;
+        background: rgba(76, 76, 76, 0.7);
+      }
+    }
+  }
 
   &-image--switch {
     opacity: 0;
-    transition: opacity .2s;
+    transition: opacity 0.2s;
     &.js-show {
       opacity: 1;
     }
@@ -33,7 +49,7 @@
         @include m.resetForm;
         cursor: pointer;
         @include m.mq-min(v.$breakpoint-md) {
-          display: none!important;
+          display: none !important;
         }
       }
       &__content {
@@ -59,11 +75,12 @@
         background-color: v.$colorBase;
       }
       > span {
-        transition: opacity 0s linear .8s;
+        transition: opacity 0s linear 0.8s;
       }
       &.js-show {
         &::before {
-          animation: maskStart 1s cubic-bezier(.89, .12, .43, .93) .2s forwards;
+          animation: maskStart 1s cubic-bezier(0.89, 0.12, 0.43, 0.93) 0.2s
+            forwards;
         }
         > span {
           opacity: 1;
@@ -77,5 +94,4 @@
       transform: translate3d(0, 0, 0) !important;
     }
   }
-
 }

@@ -23,6 +23,7 @@
     <!-- css --->
     <link rel="stylesheet" href="./assets/css/style.css">
 
+
     <!-- JavaScript --><!--deferとasyncを記述した際のjsの位置-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script><!-- /全体-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.3/picturefill.js"></script>
@@ -70,48 +71,59 @@
 
     <div class="l-wrapper">
         <!--/ Header -->
-        <header id="header" class="l-header">
+        <header id="header" class="l-header js-headerTop">
+            <button
+                type="button"
+                class="p-hamburger p-hamburger__button"
+                aria-expanded="false"
+            >
+                <span class="p-hamburger__line one"></span>
+                <span class="p-hamburger__line two"></span>
+                <span class="p-hamburger__line three"></span>
+                <span class="p-hamburger__text"></span></button
+            >
+            <!-- p-hambergermenu /-->
             <div class="l-header__content l-header__inner">
-                <div class="l-header__top">
-                    <!-- <ul class="p-logo__list">
-                        <li class="p-logo__item p-logo__01"> -->
-                            <h1 class="p-logo">
-                                <a href="/" class="p-logo__link">
-                                    ロゴ
-                                    <!-- <img src="./assets/img/common/logo_01.svg" alt="ロゴ"> -->
-                                </a>
-                            </h1>
-                        <!-- </li>
-                    </ul> -->
-                </div>
+                <h1 class="l-header__logo is-active">
+                    <a href="/" class="l-header__logoLink">
+                        <img src="/assets/img/common/logo.svg" alt="ロゴ">
+                    </a>
+                </h1>
                 <div class="p-nav__area drower">
                     <nav class="p-nav__content">
                         <ul class="p-nav__list">
-                            <li class="p-nav__item">
-                                <a href="./contact/" class="p-nav__link js-open__trigger">about</a>
+                            <li class="p-nav__item"><a href="/" class="p-nav__link">TOP</a></li>
+                            <li class="p-nav__item"><a href="/" class="p-nav__link">会社情報</a></li>
+                            <li class="p-nav__item js-spNavTrigger">
+                                <a href="/service/" class="p-nav__link">サービス</a>
+                                <ul class="p-nav__dropdown__list">
+                                    <li class="p-nav__dropdown__item">
+                                    </li><li class="p-nav__dropdown__item">
+                                        <a href="/service/" class="l-header__navSpLink">サービス TOP</a>
+                                    </li>
+                                        <a href="/service/#service01" class="l-header__navSpLink">アカウティング事業</a>
+                                    <li class="p-nav__dropdown__item">
+                                        <a href="/service/#service02" class="l-header__navSpLink">ヒューマンリソース事業</a>
+                                    </li>
+                                    <li class="p-nav__dropdown__item">
+                                        <a href="/service/#service03" class="l-header__navSpLink">ファイナンス事業</a>
+                                    </li>
+                                </ul>
                             </li>
-                            <li class="p-nav__item">
-                                <a href="#" class="p-nav__link js-open__trigger">blog</a>
-                            </li>
+                            <li class="p-nav__item"><a href="/#news" class="p-nav__link">お知らせ</a></li>
+                            <li class="p-nav__item"><a href="/" class="p-nav__link">サイトマップ</a></li>
+                            <li class="p-nav__item p-nav__contact"><a href="/contact/" class="p-nav__link">お問い合わせ</a></li>
                         </ul>
-                        <!-- <div class="p-nav__button _sp js-close_trigger">
-                            <p class="c-button__green">
-                                <span class="c-button__radius c-button__close">メニューを閉じる</span>
-                            </p>
-                        </div> -->
                     </nav>
+
+                    <!-- <div class="p-nav__button _sp js-close_trigger">
+                        <p class="c-button__green">
+                            <span class="c-button__radius c-button__close">メニューを閉じる</span>
+                        </p>
+                    </div> -->
                 </div>
-                <!-- .p-nav__area /-->
-                <button type="button" class="p-hamburger p-hamburger__button" aria-expanded="false">
-                    <span class="p-hamburger__line one"></span>
-                    <span class="p-hamburger__line two"></span>
-                    <span class="p-hamburger__line three"></span>
-                    <span class="p-hamburger__text"></span>
-                </button><!-- p-hambergermenu /-->
             </div>
-            <!--.l-header__content /-->
-        </header><!--.l-header /-->
-        <!--/ Header -->
+        </header>
 
         <!--/ Article -->
         <article class="l-article">
@@ -240,7 +252,7 @@
                         <h2 class="c-title">faq</h2>
                         <div class="p-faq__wrap">
                             <dl class="c-accordion__box">
-                                <dt class="c-accordion__title js-trigger p-faq__title">タイトル</dt>
+                                <dt class="c-accordion__title p-faq__title js-faqAccordTrigger">タイトル</dt>
                                 <dd class="c-accordion__body p-faq__item">
                                     テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
                                 </dd>
@@ -353,5 +365,6 @@
     </div>
     <!--.l-wrapper /-->
 
+    <!--deferとasyncを記述していない際のjsの位置-->
 </body>
 </html>

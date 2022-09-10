@@ -55,12 +55,11 @@ $spaceBasePc: 80px;
 // フォントサイズ
 $fontsizeBaseSp: 14px;
 $fontsizeBasePc: 16px;
-$fontsizeXsSp:  10px;
+$fontsizeXsSp: 10px;
 $fontsizeXsPc: 12px;
 
 //font
-$fontOpenSans: 'Open Sans', sans-serif;
-
+$fontOpenSans: "Open Sans", sans-serif;
 
 // line-height
 $lhBasePc: 1.5;
@@ -71,26 +70,28 @@ $InPost: 2;
 // カラー
 $colorBase: #333;
 $colorTheme: #fff;
-$colorGray: #9A9A9A;
-$colorAccent: #007AFF;
+$colorGray: #9a9a9a;
+$colorAccent: #007aff;
 $colorSub: #51493b;
 $colorLink: $colorBase;
-$colorBg: #fff;
-$colorBgSidenav: #E9ECEF;
-$colorBorder: #EDEDED;
+$colorBgWhite: $colorTheme;
+$colorBgSidenav: #e9ecef;
+$colorBorder: #ededed;
 $colorBorderGray: #707070;
-$colorBorderGray02:#EAEAEA;
-$colorBorderGray03:#E0E0E0;
-$colorBorderGray04: #DEDEDE;
+$colorBorderGray02: #eaeaea;
+$colorBorderGray03: #e0e0e0;
+$colorBorderGray04: #dedede;
+$colorBorderRed: #df4440;
 $colorNote: #788c8c;
-$colorEm: #e00022;
+$colorRed: #e00022;
+$colorEm: $colorRed;
 $colorDanger: #e00022;
-$colorvalidation: #DF4440;
+$colorvalidation: $colorBorderRed;
 $colorBgGray: $colorGray;
 $colorBgGrayLight: #f9f9f9;
 $colorBgGrayDark: #f5f5f5;
-$colorpostLinkBlue: #0061AC;
-$colorbgform: #FAFAFA;
+$colorpostLinkBlue: #0061ac;
+$colorbgform: #fafafa;
 
 // cubic-bezier
-$cbDefault: cubic-bezier(.45,.05,.3,.93);
+$cbDefault: cubic-bezier(0.45, 0.05, 0.3, 0.93);

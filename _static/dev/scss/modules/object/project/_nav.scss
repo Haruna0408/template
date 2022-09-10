@@ -1,100 +1,193 @@
 @charset "utf-8";
-@use '../../foundation/vars' as v;
-@use '../../foundation/mixin' as m;
-
+@use "../../foundation/vars" as v;
+@use "../../foundation/mixin" as m;
 
 /* grobalnavigation
 -------------------------------------------*/
-.p-nav{
+.p-nav {
+  &__area {
+    //   display: block;
+    //   position: fixed;
+    //   width: 100vw;
+    //   height: 100vh;
+    //   top: 0;
+    //   right: 0;
+    //   opacity: 0;
+    //   -webkit-transform: translateX(100%);
+    //   transform: translateX(100%);
+    //   -webkit-transition: 0.6s;
+    //   transition: 0.6s;
+    //   border-radius: 0;
+    //   display: block;
+    //   z-index: 3;
+  }
+
+  &__content {
+    padding: 20px 0;
+    // pointer-events: none;
+    // margin: 0 auto;
+    // width: 90%;
+    // max-width: 100%;
+    // @include m.flexWrap;
+    // justify-content: space-between;
+    // align-items: center;
+    // height: 100%;
+    // transition: 0.3s ease-in;
+  }
+
+  &__list {
+    @include m.flex;
+  }
+
+  &__item {
+    width: calc(100% / 6);
+    margin-right: 10px;
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    &.js-spNavTrigger {
+      .p-nav__link {
+        @include m.mq-max(v.$breakpoint-xs) {
+          position: relative;
+
+          &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: m.vw(20);
+            transform: translateY(50%);
+            display: block;
+            // width: ;
+            // height: ;
+          }
+        }
+      }
+    }
+
+    // &._sp {
+    //     display: none;
+    // }
+  }
+
+  &__link {
+    width: 100%;
+    display: block;
+    font-size: 1.4rem;
+  }
+
+  &__button {
+    // &._sp {
+    //     display: none;
+    // }
+  }
+
+  &__dropdown {
+    &__list {
+      display: none;
+    }
+  }
+
+  @include m.mq-max(v.$breakpoint-xs) {
     &__area {
+      display: none;
+
+      &.drower {
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        @include m.flexWrap;
+        justify-content: flex-end;
+        transform: translateX(100%);
+        transition: 0.6s;
+        border-radius: 0;
+        background-color: v.$colorTheme;
+
+        &.is-active {
+          // display: block;
+          // position: fixed;
+          // left: 0;
+          // right: 0;
+          // top: 0;
+          // bottom: 0;
+          // width: 100%;
+          // height: 100vh;
+          // transform: translateX(100%);
+          // background-color: #bbb;
+          // transform: translateX(0);
+          // pointer-events: auto;
+          // opacity: 1;
+          display: block;
+          transform: translateX(0);
+          transition: 0.4s;
+        }
+      }
     }
 
     &__content {
-        padding: 20px 0;
+      width: 87vw;
+      height: 100vh;
+      margin-left: auto;
+      background-color: v.$colorTheme;
+      padding: 60px 5% 180px;
+      transition: opacity 0.3s linear;
+      overflow-y: scroll;
+      // position: relative;
+
+      // &::before {
+      //   display: block;
+      //   content: "";
+      //   position: absolute;
+      //   width: 100vw;
+      //   height: 100vh;
+      //   top: 0;
+      //   left: 0;
+      //   z-index: 3;
+      //   background: rgba(76, 76, 76, 0.7);
+      // }
     }
 
     &__list {
-        @include m.flex;
+      @include m.flexWrap;
+      width: 90%;
+      margin: auto;
     }
 
     &__item {
-        width: calc(100% / 6);
-        margin-right: 10px;
-        &:last-of-type {
-            margin-right: 0;
-        }
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 10px;
 
-        // &._sp {
-        //     display: none;
-        // }
-    }
+      &:last-of-type {
+        margin-right: 0;
+        margin-bottom: 0;
+      }
 
-    &__link {
-        width: 100%;
-        display: block;
-        font-size: 1.4rem;
+      // &._sp {
+      //     display: none;
+      // }
     }
 
     &__button {
-        // &._sp {
-        //     display: none;
-        // }
+      // &._sp {
+      //     display: none;
+      // }
     }
 
-    @include m.mq-max(v.$breakpoint-xs) {
-        &__area {
-            display: none;
-
-            &.is-active {
-                display: block;
-                position: fixed;
-                left: 0;
-                right: 0;
-                top: 0;
-                bottom: 0;
-                width: 100%;
-                height: 100vh;
-                overflow-y: scroll;
-                transform: translateX(100%);
-                background-color: #bbb;
-
-                &.drower {
-                    transform: translateX(0);
-                    z-index: 100;
-                    top: 68px;
-                }
-            }
-        }
-
-        &__content {
-
-        }
-
-        &__list {
-            @include m.flexWrap;
-            width: 90%;
-            margin: auto;
-        }
-
-        &__item {
-            width: 100%;
-            margin-right: 0;
-            margin-bottom: 10px;
-
-            &:last-of-type {
-                margin-right: 0;
-                margin-bottom: 0;
-            }
-
-            // &._sp {
-            //     display: none;
-            // }
-        }
-
-        &__button {
-            // &._sp {
-            //     display: none;
-            // }
-        }
+    &__dropdown {
+      &__list {
+        display: none;
+      }
     }
+  }
+}
+
+//スマホナビアコーディオン
+@include m.mq-max(v.$breakpoint-xs) {
+  .p-nav__item.js-spNavTrigger {
+    > a {
+      pointer-events: none;
+    }
+  }
 }

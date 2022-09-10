@@ -190,7 +190,7 @@ $original-margins: (
     padding-bottom: #{$length} !important;
   }
 
-  @include mq-max {
+  @include m.mq-max(v.$breakpoint-smx) {
     .m-sp-#{$size} {
       margin: #{$length} !important;
     }

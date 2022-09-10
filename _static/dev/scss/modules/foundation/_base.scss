@@ -1,40 +1,40 @@
-@use './vars' as v;
-@use './mixin' as m;
+@use "./vars" as v;
+@use "./mixin" as m;
 
 /* Base
 ----------------------------------------------------------------- */
 *,
 *::before,
 *::after {
-box-sizing: border-box;
-outline: none!important;
+  box-sizing: border-box;
+  outline: none !important;
 }
 html,
-:root{
-	font-size: 62.5%;
+:root {
+  font-size: 62.5%;
 }
-html{
-	font-family: sans-serif;
-	-ms-text-size-adjust: 100%;
-	-webkit-text-size-adjust: 100%;
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
   overflow: auto;
 }
 body {
   // min-width: 1025px;
   position: relative;
   @include m.gothic;
-	font-size: v.$fontsizeBasePc;
-	font-weight: 400;
+  font-size: v.$fontsizeBasePc;
+  font-weight: 400;
   line-height: v.$InPost;
   letter-spacing: 0;
-	color: v.$colorBase;
+  color: v.$colorBase;
   cursor: auto;
-  background-color: v.$colorBg;
+  background-color: v.$colorBgWhite;
   font-feature-settings: "palt";
 
   @include m.mq-max(v.$breakpoint-xs) {
     min-width: initial;
-	  font-size: v.$fontsizeBasePc;
+    font-size: v.$fontsizeBasePc;
     // @include m.fz_vw(14);
     font-size: 1.4rem;
   }
@@ -62,45 +62,46 @@ p {
 a {
   display: inline-block;
   text-decoration: none;
-  transition: .3s;
+  transition: 0.3s;
   color: v.$colorBase;
   cursor: pointer;
   &:hover {
-    opacity: .6;
+    opacity: 0.6;
   }
 }
 
 section {
   position: relative;
 }
-hr{
-	background: none;
-	border: none;
-	border-bottom: 1px solid #f5f5f5;
-	margin: 0;
+hr {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #f5f5f5;
+  margin: 0;
 }
-time{
-	font-size: 11px;
-	display: block;
+time {
+  font-size: 11px;
+  display: block;
 }
 dl {
-	dt{
-		line-height: v.$lhBasePc;
+  dt {
+    line-height: v.$lhBasePc;
     font-size: v.$fontsizeBasePc;
     @include m.mq-max(v.$breakpoint-xs) {
       line-height: 1.6;
       margin-bottom: 15px;
     }
-	}
-	dd {
-		line-height: v.$lhBasePc;
+  }
+  dd {
+    line-height: v.$lhBasePc;
     font-size: v.$fontsizeBasePc;
     @include m.mq-max(v.$breakpoint-xs) {
       line-height: 1.6;
     }
-	}
+  }
 }
-caption,th {
+caption,
+th {
   text-align: left;
 }
 img {
@@ -109,8 +110,10 @@ img {
   image-rendering: -webkit-optimize-contrast;
 }
 
-
-input, textarea, select, button {
+input,
+textarea,
+select,
+button {
   /*! autoprefixer: off */
   -webkit-appearance: none !important;
   -moz-appearance: none !important;
@@ -137,7 +140,12 @@ input[type="submit"] {
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
   line-height: v.$lhTitle;
 }
@@ -156,13 +164,12 @@ h1, h2, h3, h4, h5, h6 {
 // }
 
 iframe {
-  border:none;
-  overflow:hidden;
+  border: none;
+  overflow: hidden;
 }
 
-@media(min-width: v.$breakpoint-xs){
-  a[href^="tel:"]{
+@media (min-width: v.$breakpoint-xs) {
+  a[href^="tel:"] {
     pointer-events: none;
   }
 }
-

@@ -1,58 +1,819 @@
 @charset "utf-8";
 
+@use "../../foundation/vars" as v;
+@use "../../foundation/mixin" as m;
+
 /* contact
 ----------------------------------------------------------------- */
+
+/*-------------------------------------------------
+
+フォーム共通
+
+--------------------------------------------------*/
 .p-contact {
+  &Title {
+    margin-top: 84px;
+    margin-bottom: 80px;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 0.1em;
+    text-align: center;
 
-  &__slide {
-
-    &__wrap {
-
+    @include m.mq-max(v.$breakpoint-xs) {
+      margin-top: 24px;
+      margin-bottom: 24px;
+      font-size: 80px;
+      text-align: left;
     }
-    &__item {
 
+    &__sp {
+      &--small {
+        @include m.mq-max(v.$breakpoint-xs) {
+          font-size: 50px;
+        }
+      }
+    }
+
+    &__confirm {
+      margin-top: 45px;
+      margin-bottom: 36.5px;
+      text-align: center;
+      @include m.mq-max(v.$breakpoint-xs) {
+        margin-top: 12px;
+        margin-bottom: 16.5px;
+      }
+    }
+
+    &__thanks {
+      text-align: center;
+
+      @include m.mq-max(v.$breakpoint-xs) {
+        margin-top: 8px;
+        margin-bottom: 0;
+        line-height: 1.2;
+      }
     }
   }
 
-  &__thanks {
+  &Text {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.8;
+    letter-spacing: 0.1em;
+    margin-top: 40px;
 
-    &__section {
-
+    @include m.mq-max(v.$breakpoint-xs) {
+      font-size: 40px;
+      line-height: 1.5;
+      margin-top: 45px;
     }
 
-    &__media {
+    &__privacy {
+      margin-top: 8px;
 
-      &__inner {
-        &.js-rellax {
+      @include m.mq-max(v.$breakpoint-xs) {
+        margin-top: 24px;
+      }
+    }
 
+    &Wrap {
+      width: 80%;
+      margin: auto;
+
+      @include m.mq-max(v.$breakpoint-xs) {
+        width: 100%;
+        padding: 0;
+      }
+    }
+
+    &.thin {
+      font-size: 16px;
+      @include m.mq-max(v.$breakpoint-xs) {
+        font-size: 32px;
+        font-weight: 400;
+      }
+    }
+
+    &.small {
+      font-size: 16px;
+      font-weight: 400;
+
+      &.right {
+        text-align: right;
+      }
+    }
+
+    .textColor--red {
+      display: block;
+      font-weight: 400;
+
+      @include m.mq-max(v.$breakpoint-xs) {
+        display: inline;
+      }
+    }
+  }
+
+  &__button {
+    width: 80%;
+    margin: 50px auto;
+
+    @include m.mq-max(v.$breakpoint-xs) {
+      width: 100%;
+      margin: 32px auto;
+    }
+
+    a {
+      display: block;
+      text-align: center;
+      padding: 15px;
+      font-weight: 700;
+      font-size: 40px;
+      letter-spacing: 0.1em;
+
+      @include m.mq-max(v.$breakpoint-xs) {
+        font-size: 50px;
+        width: 100%;
+        padding: 15px;
+      }
+    }
+
+    &List {
+      display: flex;
+      justify-content: center;
+      width: 80%;
+      margin: 50px auto 70px;
+
+      @include m.mq-max(v.$breakpoint-xs) {
+        flex-wrap: wrap;
+        margin: 10px auto;
+      }
+    }
+
+    &Item {
+      width: 48%;
+      margin-top: 50px;
+
+      &:last-child {
+        margin-left: 50px;
+
+        @include m.mq-max(v.$breakpoint-xs) {
+          margin-left: 0;
         }
       }
 
-      &__content {
-
+      @include m.mq-max(v.$breakpoint-xs) {
+        width: 100%;
+        margin-top: 16px;
       }
 
-      &__title {
+      a {
+        display: block;
+        padding: 15px;
+        font-weight: 700;
+        text-align: center;
+        font-size: 25px;
 
+        @include m.mq-max(v.$breakpoint-xs) {
+          padding: 27px;
+        }
       }
-      &__text {
-
-      }
-      &__btn {
-
-      }
-
-      &__image {
-
-      }
-
-      &__link {
-
-      }
-
     }
-
-
   }
 
+  &__attentionBox {
+    margin: 36px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-top: 1px solid v.$colorBorderGray;
+    border-bottom: 1px solid v.$colorBorderGray;
+
+    @include m.mq-max(v.$breakpoint-xs) {
+      width: 100%;
+      padding: 10px 0;
+      margin: 16px auto 30px;
+    }
+
+    &__icon {
+      width: 14%;
+      margin-right: 2%;
+    }
+
+    &__text {
+      width: 80%;
+      .text {
+        font-size: 16px;
+        line-height: 1.875;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+
+        @include m.mq-max(v.$breakpoint-xs) {
+          font-size: 32px;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+}
+
+/*-------------------------------
+
+	部品
+
+-------------------------------*/
+// テキスト入力ボックス
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+select,
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  // サイズ
+  &.full {
+    width: 100%;
+  }
+
+  &.half {
+    width: 42%;
+    display: inline-flex;
+    margin-right: 2%;
+
+    &:first-child {
+      margin-right: 2.5%;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &.sp-max {
+      @include m.mq-max(v.$breakpoint-xs) {
+        width: 100%;
+      }
+    }
+  }
+
+  &.middle {
+    width: rem(140);
+  }
+
+  &.three {
+    width: 15%;
+    margin-right: 1%;
+
+    @include m.mq-max(v.$breakpoint-xs) {
+      width: 24%;
+    }
+  }
+
+  // プレイスフォルダ
+  &::placeholder {
+    color: #b0b0b0;
+  }
+}
+
+//チェックボックス
+//ラジオボタン
+input[type="radio"] {
+  display: none;
+  position: relative;
+  cursor: pointer;
+}
+
+.check__label {
+  position: relative;
+  display: inline-block;
+  margin-top: 5px;
+  margin-bottom: 8px;
+
+  @include m.mq-max(v.$breakpoint-smx) {
+    font-size: 0.89vw;
+    padding-left: 1.28vw;
+  }
+
+  @include m.mq-max(v.$breakpoint-xs) {
+    @include m.fz_vw(14);
+    padding-left: get_vw(24);
+    margin-top: 2vw;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+  }
+
+  &::before {
+    background: v.$colorBgWhite;
+    border: 1px solid v.$colorBorderGray;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+
+    @include m.mq-max(v.$breakpoint-smx) {
+      width: 1vw;
+      height: 1vw;
+    }
+
+    @include m.mq-max(v.$breakpoint-xs) {
+      width: get_vw(16);
+      height: get_vw(16);
+    }
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background-color: v.$colorBorderGray;
+    opacity: 0;
+
+    @include m.mq-max(v.$breakpoint-smx) {
+      width: 0.56vw;
+      height: 0.56vw;
+      left: 0.22vw;
+    }
+
+    @include m.mq-max(v.$breakpoint-xs) {
+      width: get_vw(10);
+      height: get_vw(10);
+      left: 0.78vw;
+    }
+  }
+
+  &.is-invalid {
+    &::before {
+      border-color: #ff0000;
+    }
+  }
+}
+
+input[type="radio"]:checked + .check__label::after {
+  opacity: 1;
+}
+
+//セレクトボックス矢印
+.selectArrow {
+  display: inline-block;
+  position: relative;
+  width: 135px;
+
+  @include m.mq-max(v.$breakpoint-xs) {
+    width: 280px;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%) rotate(90deg);
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 0 5px 8.7px;
+    border-color: rgba(255, 255, 255, 0) rgba(255, 255, 255, 0)
+      rgba(255, 255, 255, 0) #000;
+
+    @include m.mq-max(v.$breakpoint-xs) {
+      border-width: 15px 0 15px 20px;
+    }
+  }
+
+  select {
+    width: 100%;
+  }
+}
+
+//バリデーション
+.error_text {
+  margin: 3px;
+  font-weight: 500;
+  color: v.$colorvalidation;
+  font-size: 14px;
+}
+
+/*-----------------------------------------------
+
+index
+
+------------------------------------------------*/
+.p-contactForm {
+  width: 100%;
+
+  @include m.mq-max(v.$breakpoint-smx) {
+    margin-top: 2.78vw;
+    padding-top: 2.08vw; //60px
+    border-top: 1px solid #eee;
+  }
+
+  @include m.mq-max(v.$breakpoint-xs) {
+    margin-top: 48px;
+    margin-bottom: 40px;
+  }
+
+  /*-------------------------------
+
+    フォームテーブル
+
+  -------------------------------*/
+
+  // &__content {
+  // }
+
+  &__table {
+    width: 100%;
+
+    @include m.mq-max(v.$breakpoint-xs) {
+      max-width: 100%;
+      border-top: none;
+    }
+  }
+
+  // &__tr {
+  // }
+
+  &__tableHead {
+    font-weight: 700;
+    line-height: 1.8;
+    vertical-align: middle;
+
+    @include m.mq-max(v.$breakpoint-smx) {
+      padding: 2vw 1vw;
+      width: 25%;
+      font-size: 1.06vw;
+    }
+
+    @include m.mq-max(v.$breakpoint-xs) {
+      display: block;
+      width: 100%;
+      margin-top: get_vw(20);
+      line-height: 2;
+    }
+
+    label {
+      font-weight: 700;
+
+      @include m.mq-max(v.$breakpoint-smx) {
+      }
+
+      @include m.mq-max(v.$breakpoint-xs) {
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  &__tableData {
+    width: 65%;
+    font-weight: 500;
+
+    @include m.mq-max(v.$breakpoint-smx) {
+      font-size: 1vw;
+      padding: 1vw;
+      margin: 1vw 0;
+    }
+
+    @include m.mq-max(v.$breakpoint-xs) {
+      display: block;
+      width: 100%;
+      padding: 20px 0;
+    }
+
+    input,
+    select,
+    option,
+    textarea {
+      width: 100%;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      background-color: #f9f9f9;
+      border-radius: 3px;
+      border: none;
+
+      &::placeholder {
+        color: #b0b0b0;
+      }
+
+      @include m.mq-max(v.$breakpoint-smx) {
+        padding: 1vw 2vw;
+        margin-top: 1vw;
+        margin-bottom: 1vw;
+        font-size: 1vw;
+      }
+
+      @include m.mq-max(v.$breakpoint-xs) {
+        padding: get_vw(15);
+        font-size: get_vw(14);
+        letter-spacing: 0.025em;
+      }
+    }
+
+    select {
+      letter-spacing: 0.3em;
+      text-align: center;
+      &:invalid {
+        color: #777;
+      }
+      option {
+        text-align: center;
+        color: #000;
+        // letter-spacing: 0.3em;
+      }
+    }
+
+    .contactType {
+      display: flex;
+      justify-content: space-between;
+
+      @include m.mq-max(v.$breakpoint-xs) {
+        flex-wrap: wrap;
+      }
+    }
+    .radio__item {
+      border: 1px solid #e5e5e5;
+      border-radius: 3px;
+      display: inline-block;
+
+      @include m.mq-max(v.$breakpoint-smx) {
+        padding: 1vw;
+        width: 46%;
+      }
+
+      @include m.mq-max(v.$breakpoint-xs) {
+        width: 100%;
+        padding: get_vw(10);
+      }
+
+      &:last-of-type {
+        @include m.mq-max(v.$breakpoint-xs) {
+          margin-top: get_vw(15);
+        }
+      }
+    }
+  }
+
+  &__label {
+    // 必須
+    &--require {
+      text-align: center;
+      color: v.$colorBgWhite;
+      display: inline-block;
+      padding: 0.03vw 3%;
+      font-size: 0.78vw; //14px
+      background-color: v.$colorBase;
+      margin-right: 3%;
+      line-height: 1.5;
+
+      @include m.mq-max(v.$breakpoint-xs) {
+        padding: get_vw(3) get_vw(7);
+      }
+    }
+
+    //任意
+    &--any {
+      text-align: center;
+      color: v.$colorBase;
+      display: inline-block;
+      padding: 0.03vw 3%;
+      font-size: 0.78vw; //14px
+      border: 1px solid v.$colorBase;
+      margin-right: 3%;
+      line-height: 1.5;
+    }
+  }
+
+  &__attention {
+    margin-top: 2.78vw;
+    text-align: center;
+    .inline {
+      color: #0078dd;
+      text-decoration: underline;
+    }
+  }
+
+  &__button {
+    margin: 18px auto 64px;
+    text-align: center;
+
+    @include m.mq-max(v.$breakpoint-xs) {
+      margin: 32px auto 40px;
+    }
+
+    //確認画面遷移ボタン
+    .p-contactForm__submit {
+      background-color: v.$colorTheme;
+      border: 1px solid v.$colorBorderRed;
+      border-radius: 3px;
+      color: v.$colorRed;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-align: center;
+      cursor: pointer;
+
+      @include m.mq-max(v.$breakpoint-smx) {
+        width: 36%;
+        max-width: 432px;
+        padding: 1.67vw;
+        font-size: 1.11vw; //20px
+      }
+
+      @include m.mq-max(v.$breakpoint-xs) {
+        width: 80%;
+        padding: get_vw(20);
+        font-size: get_vw(15);
+      }
+    }
+  }
+
+  &__btnWrap {
+    @include m.mq-max(v.$breakpoint-smx) {
+      @include m.flex;
+      justify-content: center;
+    }
+
+    @include m.mq-max(v.$breakpoint-xs) {
+    }
+  }
+
+  &__btnItem {
+    @include m.mq-max(v.$breakpoint-smx) {
+      // width: 48%;
+      &:last-of-type {
+        margin-left: 2%;
+      }
+    }
+
+    @include m.mq-max(v.$breakpoint-xs) {
+      // width: 80%;
+      &:last-of-type {
+        margin-left: 0;
+        margin-top: 2%;
+      }
+    }
+  }
+
+  .input__textarea {
+    .p-contactForm__tableHead {
+      vertical-align: top;
+      @include m.mq-max(v.$breakpoint-smx) {
+        padding: 3vw 1vw;
+      }
+    }
+  }
+
+  //バリデーション
+  .error_text {
+    // display: none;
+    font-weight: 500;
+    color: v.$colorvalidation;
+
+    @include m.mq-max(v.$breakpoint-smx) {
+      margin: 0.21vw;
+      font-size: 0.89vw;
+    }
+  }
+}
+
+/*recapture*/
+.recaptchaWrap {
+  display: flex;
+  justify-content: center;
+
+  @include m.mq-max(v.$breakpoint-smx) {
+    margin-bottom: 3.89vw;
+  }
+
+  @include m.mq-max(v.$breakpoint-xs) {
+    margin-bottom: get_vw(45);
+  }
+}
+
+/*-----------------------------------------------
+
+confirm
+
+------------------------------------------------*/
+.p-contact__content__confirm {
+  .p-contactForm__btn__confirmWrap {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include m.mq-max(v.$breakpoint-smx) {
+      margin: 2.22vw auto 0;
+      justify-content: center;
+    }
+
+    @include m.mq-max(v.$breakpoint-xs) {
+      max-width: 100%;
+      margin: get_vw(30) auto 0;
+      justify-content: center;
+    }
+
+    .p-contactForm__back {
+      cursor: pointer;
+      background-color: #fff;
+      border: 1px solid v.$colorBase;
+      border-radius: 3px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-align: center;
+
+      @include m.mq-max(v.$breakpoint-xs) {
+        width: get_vw(220);
+        margin-top: get_vw(20);
+        padding: 5.33333vw;
+        font-size: 4vw;
+      }
+
+      @include m.mq-max(v.$breakpoint-smx) {
+        width: 24vw;
+        padding: 1.67vw;
+        font-size: 1.11vw;
+      }
+    }
+
+    .p-contactForm__submit {
+      cursor: pointer;
+      display: block;
+      background-color: #fff;
+      border: 1px solid #da3a1a;
+      border-radius: 3px;
+      color: #da3a1a;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-align: center;
+      cursor: pointer;
+
+      @include m.mq-max(v.$breakpoint-smx) {
+        width: 24vw;
+        padding: 1.67vw;
+        font-size: 1.11vw;
+        margin-left: 2.22vw;
+      }
+
+      @include m.mq-max(v.$breakpoint-xs) {
+        width: get_vw(220);
+        padding: 5.33333vw;
+        font-size: 4vw;
+        margin-top: get_vw(20);
+      }
+    }
+  }
+
+  .p-contactForm__tableData {
+    @include m.mq-max(v.$breakpoint-smx) {
+      padding: 2vw 1vw;
+    }
+  }
+
+  .input__textarea .p-contactForm__tableData {
+    @include m.mq-max(v.$breakpoint-smx) {
+      padding: 3vw 1vw;
+    }
+  }
+}
+
+/*-----------------------------------------------
+
+complete
+
+------------------------------------------------*/
+.p-contact__content__thanks {
+  @include m.mq-max(v.$breakpoint-smx) {
+    width: 60%;
+    margin: auto;
+  }
+
+  .box__button--border {
+    @include m.mq-max(v.$breakpoint-smx) {
+      width: 40%;
+      margin: 3.22vw auto 0;
+    }
+
+    @include m.mq-max(v.$breakpoint-xs) {
+      width: 50%;
+      margin: get_vw(30) auto 0;
+    }
+
+    a {
+      width: 100%;
+
+      @include m.mq-max(v.$breakpoint-xs) {
+        padding: get_vw(10);
+      }
+
+      @include m.mq-max(v.$breakpoint-smx) {
+        padding: 1vw;
+      }
+    }
+  }
 }

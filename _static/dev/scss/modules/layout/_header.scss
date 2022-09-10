@@ -1,17 +1,19 @@
 @charset "utf-8";
-@use '../foundation/vars' as v;
-@use '../foundation/mixin' as m;
+@use "../foundation/vars" as v;
+@use "../foundation/mixin" as m;
 
 /* header
 ----------------------------------------------------------------- */
 .l-header {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 99;
-    transition: all .3s;
-    background-color: v.$colorTheme; //#fff
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  // z-index: 99;
+  transition: all 0.3s;
+  background-color: v.$colorTheme; //#fff
+  // /* backface-visibility: hidden; */
+  z-index: 3;
 
   &__inner {
     max-width: 1100px;
@@ -33,11 +35,12 @@
   }
 
   @include m.mq-max(v.$breakpoint-xs) {
-
+    height: m.vw(80);
     &__inner {
       max-width: 100%;
-      margin: 0 auto;
+      height: 100%;
       padding: 10px 2%;
+      padding: m.vw(20) 2%;
     }
 
     &__top {
@@ -46,8 +49,7 @@
     }
 
     &__bottom {
-        display: none;
+      display: none;
     }
   }
-
 }
