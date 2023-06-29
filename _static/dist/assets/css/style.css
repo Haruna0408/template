@@ -71,7 +71,6 @@ input, button, textarea, select {
 *::before,
 *::after {
   box-sizing: border-box;
-  outline: none !important;
 }
 
 html,

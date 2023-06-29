@@ -11,8 +11,8 @@
     <meta name="robots" content="noindex,nofollow" />
     <!-- 公開時削除↑↑ -->
 
-    <!-- 類似ページやPC / SPで異なるURLの場合の記述 ↓↓-->
-    <link rel="canonical" href="正規ページURL（https://〜）" />
+    <!-- URL:正規化 類似ページやPC / SPで異なるURLの場合の記述 ↓↓-->
+    <link rel="canonical" href="https://***/index.html" />
 
     <!-- title -->
     <title>インデックス | テンプレート</title>
@@ -79,6 +79,7 @@
             <button
                 type="button"
                 class="p-hamburger p-hamburger__button"
+                aria-controls="global-nav"
                 aria-expanded="false"
             >
                 <span class="p-hamburger__line one"></span>
@@ -93,7 +94,7 @@
                         <img src="/assets/img/common/logo.svg" alt="ロゴ">
                     </a>
                 </h1>
-                <div class="p-nav__area drower">
+                <div class="p-nav__area drower" role="navigation">
                     <nav class="p-nav__content">
                         <ul class="p-nav__list">
                             <li class="p-nav__item"><a href="/" class="p-nav__link">TOP</a></li>
@@ -130,7 +131,7 @@
         </header>
 
         <!--/ Contents -->
-        <main class="l-main">
+        <main class="l-main" role="main">
             <article class="l-article">
 
                 <div class="u-bg__parallax">
@@ -185,7 +186,7 @@
                                         <!-- /picture pc/ spで画像切り替え -->
                                         <picture>
                                             <source srcset="./assets/img/card-img.jpg" width="240" height="148" loading="lazy" media="(min-width: 768px)" />
-                                            <img src="./assets/img/card-img-sp.jpg" width="240" height="148" loading="lazy" alt="" />
+                                            <img src="./assets/img/card-img-sp.jpg" width="240" height="148" loading="lazy" alt="イメージ" />
                                         </picture>
                                     </div>
                                     <div class="p-card__body">
@@ -196,7 +197,7 @@
                                     </div>
                                 <!-- </a> -->
                                 <!-- 記事ページへリンク -->
-                                <a href="#" class="c-button__base p-card__button">MORE DETAIL</a>
+                                <a href="#" class="c-button__base p-card__button" role="link">MORE DETAIL</a>
                             </div>
 
                             <!-- Advantage02 -->
@@ -342,7 +343,7 @@
         <!-- Contents /-->
 
         <!--/ Footer -->
-        <footer class="l-footer">
+        <footer class="l-footer" role="contentinfo">
             <div class="l-footer__top">
 
             </div>

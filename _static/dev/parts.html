@@ -10,6 +10,9 @@
     <meta name="robots" content="noindex,nofollow" />
     <!-- 公開時削除↑↑ -->
 
+    <!-- URL:正規化 類似ページやPC / SPで異なるURLの場合の記述 ↓↓-->
+    <link rel="canonical" href="https://***/parts.html" />
+
     <!-- title --->
     <title>インデックス | テンプレート</title>
 
@@ -117,7 +120,7 @@
             <!-- </li>
                     </ul> -->
           </div>
-          <div class="p-nav__area drower">
+          <div class="p-nav__area drower" role="navigation">
             <nav class="p-nav__content">
               <ul class="p-nav__list">
                 <li class="p-nav__item">
@@ -140,6 +143,7 @@
           <button
             type="button"
             class="p-hamburger p-hamburger__button"
+            aria-controls="global-nav"
             aria-expanded="false"
           >
             <span class="p-hamburger__line one"></span>
@@ -154,7 +158,7 @@
       <!-- Header /-->
 
       <!--/ Contents -->
-      <main class="l-main">
+      <main class="l-main" role="main">
         <article class="l-article">
           <div class="u-bg__parallax">
             <div class="u-bg__parallax__child">
@@ -207,7 +211,11 @@
           <!--.l-mainvisual__page /-->
 
           <!-- breadcrumb -->
-          <div id="breadcrumb" class="breadcrumb js-fade">
+          <div
+            id="breadcrumb"
+            class="breadcrumb js-fade"
+            aria-label="Breadcrumbs"
+          >
             <ol
               class="breadcrumb__list"
               itemscope=""
@@ -243,7 +251,10 @@
           <section class="c-sticky__area">
             <div class="c-sticky__content">
               <div class="c-sticky__side p-sidebar__area p-sticky__parent">
-                <aside class="p-sidebar__wrap p-sticky__child">
+                <aside
+                  class="p-sidebar__wrap p-sticky__child"
+                  role="complementary"
+                >
                   <div class="p-sidebar__cateList">
                     <div class="p-sidebar__cateBlock">
                       <dl class="p-sidebar___cateItem">
@@ -355,7 +366,8 @@
                 <span class="c-heading__sub">検索</span>
               </h2>
 
-              <div class="p-search__box">
+              <!-- 検索 -->
+              <div class="p-search__box" role="search">
                 <form class="p-search__form" action="/">
                   <input
                     class="p-search__input"
@@ -404,7 +416,8 @@
 
             <section class="l-section l-about__intro">
               <div class="l-inner">
-                <div class="c-tab__container">
+                <!-- タブ切り替え -->
+                <div class="c-tab__container" role="tab">
                   <!-- タブボタンのラジオボタン非表示 -->
                   <input type="radio" id="tab1" name="tab__item" checked />
                   <input type="radio" id="tab2" name="tab__item" />
@@ -496,7 +509,7 @@
       <!-- Contents /-->
 
       <!--/ Footer -->
-      <footer class="l-footer">
+      <footer class="l-footer" role="contentinfo">
         <div class="l-footer__top"></div>
         <div class="p-copyright">
           <p class="p-copyright__text">&copy;&nbsp;2021 Haruna Ishikawa</p>
